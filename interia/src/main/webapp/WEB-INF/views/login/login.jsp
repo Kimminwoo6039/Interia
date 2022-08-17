@@ -58,7 +58,7 @@ h1{
 }
 
 .form-control:focus {
-    color: #fff !important;
+    color: black !important;
     background-color: #fff;
     border-color: #fff !important;
     outline: none;
@@ -113,7 +113,7 @@ a{
 </head>
 <body>
 <div class="login-form" style="margin-top: 150px;">
-     <h2 style="color: #35c5f0;text-align: center;">오늘의 인테리어</h2>
+     <h2 style="color: #35c5f0;text-align:center;">오늘의 인테리어</h2>
      <div class="form-group ">
        <input type="text" class="form-control" placeholder="아이디 " id="UserName">
        <i class="mdi mdi-account"></i>
