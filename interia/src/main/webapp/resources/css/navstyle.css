@@ -35,6 +35,19 @@
 }
 
 
+.nav-link a:hover{
+	border-radius:4px;
+	background:#91d3ff;
+	color: #91d3ff;
+}
+
+.nav-item:hover{
+	border-radius:4px;
+	background:#91d3ff;
+	color: #91d3ff;
+	
+}
+
 
 .form{
 
@@ -84,4 +97,47 @@
 
 .form-input:hover{
 background: #91d3ff;
+
 }
+
+/*¹öÆ° */
+
+.button{
+    height: 45px;
+    width: 150px;
+    letter-spacing: 2px;
+    background-color: transparent;
+    cursor: pointer;
+    border: 2px solid #91d3ff;
+    border-radius: 3px;
+    color: #91d3ff;
+    transition: all 0.5s;
+    position: relative;
+}
+
+.button:hover{
+     background-color: #fff; 
+    color: black;
+}
+
+.button::after{
+    content:attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,50%) scale(5);
+    width: 100%;
+    color: #91d3ff;
+    transition:tranform 1s;
+    opacity: 0;
+}
+
+.button:hover::after{
+    transform: translate(-50%,-50%) scale(1);
+    opacity: 1;
+}
+
+
+
+
+

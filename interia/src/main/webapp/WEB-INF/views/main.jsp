@@ -18,45 +18,140 @@
 
 <style type="text/css">
 
-.button{
-    height: 45px;
-    width: 150px;
-    letter-spacing: 2px;
-    background-color: transparent;
-    cursor: pointer;
-    border: 2px solid #91d3ff;
-    border-radius: 3px;
-    color: #91d3ff;
-    transition: all 0.5s;
+.price:hover{
+
+opacity: 0.5;
+
+}
+
+
+h1 { 
+  text-align: center;
+}
+
+.product{
+  max-width: 100%;
+    width: 400px;
+  margin: 0px auto;
+    width: 400px;
+  margin: 0px auto;
+  overflow: hidden;
+  transition: all 0.2s linear;
+
+}
+
+.product:hover{
+
+    transform: scale( 1.1 );
+    
+    
+    }
+    
+    
+    
+    
+    
+    
+.card {
     position: relative;
+    display: flex;
+    width: 100px;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #d2d2dc;
+    border-radius: 11px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgb(249, 249, 250);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(212,182,212,1);
+    box-shadow: 0px 0px 5px 0px rgb(161, 163, 164);
 }
 
-.button:hover{
-     background-color: #fff; 
-    color: black;
+ .card .card-body {
+        padding: 1rem 1rem;
+ }
+
+ .card-body {
+     flex: 1 1 auto;
+     padding: 1.25rem
+ }
+
+ 
+
+
+ .logo{
+        height: 67px;
+ }
+
+
+.items {
+    width: 90%;
+    margin: 0px auto;
+    margin-top: 250px
 }
 
-.button::after{
-    content:attr(data-text);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,50%) scale(5);
-    width: 100%;
-    color: #91d3ff;
-    transition:tranform 1s;
-    opacity: 0;
+.slick-slide {
+    margin: 10px
+}
+    
+    
+    
+    
+    
+    
 }
 
-.button:hover::after{
-    transform: translate(-50%,-50%) scale(1);
-    opacity: 1;
-}
 
 
 </style>
 
+<script type="text/javascript">
 
+$(document).ready(function(){
+    
+    $('.items').slick({
+  dots: true,
+  infinite: true,
+  speed: 800,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  slidesToShow: 10,
+  slidesToScroll: 10,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 6,
+        slidesToScroll: 6,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 4
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3
+      }
+    }
+
+  ]
+});
+          });
+
+</script>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 </head>
 <body style="background: #fff">
@@ -130,10 +225,10 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color:#91d3ff; ">스토어홈</a>
+          <a class="nav-link active" aria-current="page" href="#" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color:#91d3ff;">스토어홈</a>
         </li>
         <li class="nav-item">
-           <a class="nav-link" aria-current="page" href="#" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color: #2F3438; ">베스트</a>
+           <a class="nav-link" aria-current="page" href="#" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color: #2F3438;">베스트</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="#" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color: #2F3438; ">오늘의상품</a>
@@ -221,20 +316,292 @@
   
 </div>
 
-<div class="container" style="display: flex;justify-content: center;align-items: center;height: 160px;">
+<div class="container" style="display: flex;align-items: center;height: 160px;width: 1100px;justify-content: center;">
 
 <div class="social-buttons">
-    
-    
-	       <button class="neo-button"><i class="fa fa-facebook fa-2x"></i> </button>
-           <button class="neo-button"><i class="fa fa-linkedin fa-2x"></i> </button>
-           <button class="neo-button"><i class="fa fa-google fa-2x"></i> </button>
-           <button class="neo-button"><i class="fa fa-dribbble fa-2x"></i> </button>
-             <button class="neo-button"><i class="fa fa-twitter fa-2x"></i> </button>
-             </div>
+
+
+			<button class="button1"
+				style="width: 80px; height: 80px; border: none; border-radius: 8px;margin: 4px 40px;background:#f05650 ">
+				<img src="<%=request.getContextPath()%>/resources/image1/11.png"
+					style="width: 65px; height: 65px; border: none; border-radius: 8px;align-items: center;padding-top: 12px;">
+				<div style="margin-top: 12px;">
+				<p style="font-size: 16px;color: #2F3438;font-family: 'Noto Sans KR', sans-serif;margin-top: 8px;">시즌세일</p>
+				</div>
+			</button>
+
+			<button class="button1"
+				style="width: 80px; height: 80px; border: none; border-radius: 8px;margin: 4px 40px;background:#6df6ea">
+				<img src="<%=request.getContextPath()%>/resources/image1/44.png"
+					style="width: 65px; height: 65px; border: none; border-radius: 16px;align-items: center;padding-top: 12px;">
+				<div style="margin-top: 12px;">
+				<p style="font-size: 16px;color: #2F3438;font-family: 'Noto Sans KR', sans-serif;margin-top: 8px;">빠른배송</p>
+				</div>
+			</button>
+			<button class="button1"
+				style="width: 80px; height: 80px; border: none; border-radius: 8px;margin: 4px 40px;background:#99ccff">
+				<img src="<%=request.getContextPath()%>/resources/image1/33.png"
+					style="width: 65px; height: 65px; border: none; border-radius: 8px;align-items: center;padding-top: 12px;">
+				<div style="margin-top: 12px;">
+				<p style="font-size: 16px;color: #2F3438;font-family: 'Noto Sans KR', sans-serif;margin-top: 8px;">자취필수</p>
+				</div>
+			</button>
+			<button class="button1"
+				style="width: 80px; height: 80px; border: none; border-radius: 8px;margin: 4px 40px;background:#d0936d">
+				<img src="<%=request.getContextPath()%>/resources/image1/55.png"
+					style="width: 65px; height: 65px; border: none; border-radius: 8px;align-items: center;padding-top: 12px;">
+				<div style="margin-top: 12px;">
+				<p style="font-size: 16px;color: #2F3438;font-family: 'Noto Sans KR', sans-serif;margin-top: 8px;">캠핑용품</p>
+				</div>
+			</button>
+			<button class="button1"
+				style="width: 80px; height: 80px; border: none; border-radius: 8px;margin: 4px 40px;background:#ffc0cb">
+				<img src="<%=request.getContextPath()%>/resources/image1/66.png"
+					style="width: 65px; height: 65px; border: none; border-radius: 8px;align-items: center;padding-top: 12px;">
+				<div style="margin-top: 12px;">
+				<p style="font-size: 16px;color: #2F3438;font-family: 'Noto Sans KR', sans-serif;margin-top: 8px;">전자제품</p>
+				</div>
+			</button>
+			<button class="button1"
+				style="width: 80px; height: 80px; border: none; border-radius: 8px;margin: 4px 40px;background:#BFC9AB">
+				<img src="<%=request.getContextPath()%>/resources/image1/77.png"
+					style="width: 65px; height: 65px; border: none; border-radius: 8px;align-items: center;padding-top: 12px;">
+				<div style="margin-top: 12px;">
+				<p style="font-size: 16px;color: #2F3438;font-family: 'Noto Sans KR', sans-serif;margin-top: 8px;">수리센터</p>
+				</div>
+			</button>
+		</div>
 
 
 </div>
+
+<br>
+<Br>
+<!-- ddd -->
+<A style="font-family: 'Noto Sans KR', sans-serif;margin-left: 400px;margin-top: 140px;font-size: 24px;">오늘의상품</A><a style="font-family: 'Noto Sans KR', sans-serif;margin-left: 950px;margin-top: 140px;color: #ff7777" href="#" >더보기</a>
+<div class="container" style="display: flex;align-items: center;height:3000px;width: 1200px;height: 400px;padding-bottom: 120px;margin-top: px;">
+
+
+
+			<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+			
+				<div class="product" style="margin-top: 100px;">
+			
+					<img
+						src="<%=request.getContextPath()%>/resources/image1/5555.jpg"
+						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
+					<ul style="justify-content: center;">
+					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
+					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
+					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
+					</ul>		
+				</div>
+	
+			</div>
+			
+				<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+			
+				<div class="product" style="margin-top: 100px;">
+				
+					<img
+						src="<%=request.getContextPath()%>/resources/image1/7777.png"
+						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
+					<ul style="justify-content: center;">
+					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
+					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
+					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
+					</ul>		
+				</div>
+	
+			</div>
+
+	<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+			
+				<div class="product" style="margin-top: 100px;">
+				
+					<img
+						src="<%=request.getContextPath()%>/resources/image1/00.jpg"
+						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
+					<ul style="justify-content: center;">
+					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
+					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
+					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
+					</ul>		
+				</div>
+	
+			</div>
+			
+				<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+			
+				<div class="product" style="margin-top: 100px;">
+				
+					<img
+						src="<%=request.getContextPath()%>/resources/image1/33.jpg"
+						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
+					<ul style="justify-content: center;">
+					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
+					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
+					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
+					</ul>		
+				</div>
+	
+			</div>
+
+<!-- 카테고리 -->
+		
+
+</div>
+
+<!-- ㅇㅇㅇ -->
+
+<A style="font-family: 'Noto Sans KR', sans-serif;margin-left: 400px;margin-top: 140px;font-size: 24px;">인기상품</A><a style="font-family: 'Noto Sans KR', sans-serif;margin-left: 950px;margin-top: 140px;" href="#">더보기</a>
+<div class="container" style="display: flex;align-items: center;height:200px;width: 1200px;height: 400px;padding-bottom: 120px;margin-top: px;">
+
+<Div class="row" style="margin-top: 500px;">
+
+
+
+
+<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+			
+				<div class="product">
+			
+					<img
+						src="<%=request.getContextPath()%>/resources/image1/5555.jpg"
+						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
+					<ul style="justify-content: center;">
+					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
+					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
+					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
+					</ul>		
+				</div>
+	
+			</div>
+			
+				<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+			
+				<div class="product">
+				
+					<img
+						src="<%=request.getContextPath()%>/resources/image1/7777.png"
+						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
+					<ul style="justify-content: center;">
+					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
+					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
+					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
+					</ul>		
+				</div>
+	
+			</div>
+
+	<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+			
+				<div class="product">
+				
+					<img
+						src="<%=request.getContextPath()%>/resources/image1/00.jpg"
+						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
+					<ul style="justify-content: center;">
+					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
+					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
+					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
+					</ul>		
+				</div>
+	
+			</div>
+			
+				<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+			
+				<div class="product">
+				
+					<img
+						src="<%=request.getContextPath()%>/resources/image1/33.jpg"
+						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
+					<ul style="justify-content: center;">
+					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
+					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
+					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
+					</ul>		
+				</div>
+	
+			</div>
+
+<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+			
+				<div class="product">
+			
+					<img
+						src="<%=request.getContextPath()%>/resources/image1/5555.jpg"
+						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
+					<ul style="justify-content: center;">
+					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
+					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
+					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
+					</ul>		
+				</div>
+	
+			</div>
+			
+				<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+			
+				<div class="product">
+				
+					<img
+						src="<%=request.getContextPath()%>/resources/image1/7777.png"
+						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
+					<ul style="justify-content: center;">
+					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
+					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
+					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
+					</ul>		
+				</div>
+	
+			</div>
+
+	<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+			
+				<div class="product">
+				
+					<img
+						src="<%=request.getContextPath()%>/resources/image1/00.jpg"
+						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
+					<ul style="justify-content: center;">
+					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
+					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
+					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
+					</ul>		
+				</div>
+	
+			</div>
+			
+				<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+			
+				<div class="product">
+				
+					<img
+						src="<%=request.getContextPath()%>/resources/image1/33.jpg"
+						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
+					<ul style="justify-content: center;">
+					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
+					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
+					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
+					</ul>		
+				</div>
+	
+			</div>
+
+
+
+
+</div>
+
+
+	
+
+
+	</div>
+
+
 
 
 </body>
