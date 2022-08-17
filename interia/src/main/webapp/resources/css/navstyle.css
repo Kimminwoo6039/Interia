@@ -137,7 +137,58 @@ background: #91d3ff;
     opacity: 1;
 }
 
+.price:hover{
 
+opacity: 0.5;
+
+}
+
+
+h1 { 
+  text-align: center;
+}
+
+.product{
+  max-width: 100%;
+    width: 400px;
+  margin: 0px auto;
+    width: 400px;
+  margin: 0px auto;
+  overflow: hidden;
+  transition: all 0.2s linear;
+
+}
+
+.product:hover{
+
+    transform: scale( 1.1 );
+    
+    
+    }
+    
+    
+    
+    
+   .items{
+  width:90%;
+  margin:0px auto;
+  margin-top: 100px;
+}
+.slick-slide{
+  margin:10px;
+}
+.slick-slide img{
+  width:100%;
+  border: 0px solid black;
+} 
+    
+.slick-prev:before, .slick-next:before{
+color: black;
+}
+
+a{
+text-decoration: none;
+}
 
 
 

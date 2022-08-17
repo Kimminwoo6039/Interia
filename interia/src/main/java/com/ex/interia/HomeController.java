@@ -36,4 +36,18 @@ public class HomeController {
 		return "main";
 	}
 	
+	@RequestMapping("/list")
+	public String list() {
+		return "shop/product_list";
+	}
+	
+	@RequestMapping("/login")
+	public String login() {
+		return "login/login";
+	}
+	
+	@RequestMapping("/join")
+	public String kj() {
+		return "login/join";
+	}
 }

@@ -18,58 +18,7 @@
 
 <style type="text/css">
 
-.price:hover{
 
-opacity: 0.5;
-
-}
-
-
-h1 { 
-  text-align: center;
-}
-
-.product{
-  max-width: 100%;
-    width: 400px;
-  margin: 0px auto;
-    width: 400px;
-  margin: 0px auto;
-  overflow: hidden;
-  transition: all 0.2s linear;
-
-}
-
-.product:hover{
-
-    transform: scale( 1.1 );
-    
-    
-    }
-    
-    
-    
-    
-   .items{
-  width:90%;
-  margin:0px auto;
-  margin-top: 100px;
-}
-.slick-slide{
-  margin:10px;
-}
-.slick-slide img{
-  width:100%;
-  border: 0px solid black;
-} 
-    
-.slick-prev:before, .slick-next:before{
-color: black;
-}
-
-a{
-text-decoration: none;
-}
 
 </style>
 
@@ -89,7 +38,7 @@ text-decoration: none;
 	<div class="container-fluid">
        <div class="row p-2 pt-3 pb-3 d-flex align-items-center">
            <div class="col-md-2">
-               <a style="color: #212629;font-size: 28px;font-family: 'Noto Sans KR', sans-serif;">오늘의 인테리어</a>
+               <a style="color: #212629;font-size: 28px;font-family: 'Noto Sans KR', sans-serif;" href="<%=request.getContextPath()%>/">오늘의 인테리어</a>
            </div>
            
            
@@ -160,7 +109,7 @@ text-decoration: none;
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="#" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color: #2F3438; ">오늘의상품</a>
         </li>
-        <li class="nav-item">
+   <!--      <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color: #2F3438; ">시즌세일</a> 
         </li>
          <li class="nav-item">
@@ -177,7 +126,7 @@ text-decoration: none;
         </li>
          <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color: #2F3438; ">신상품</a> 
-        </li>
+        </li> -->
        
       </ul>
     </div>
