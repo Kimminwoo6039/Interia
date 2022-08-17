@@ -140,14 +140,14 @@
 
 <!-- 슬라이드 -->
 
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="width: 1900px;height: 400px;">
   
 
   
   
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="<%=request.getContextPath()%>/resources/image/6.png" class="d-block w-100">
+      <img src="<%=request.getContextPath()%>/resources/image1/1z.webp" class="d-block w-100">
     </div>
      <div class="carousel-item">
       <img src="<%=request.getContextPath()%>/resources/image/1.webp" class="d-block w-100" >
@@ -162,7 +162,7 @@
       <img src="<%=request.getContextPath()%>/resources/image/4.webp" class="d-block w-100" >
     </div>
      <div class="carousel-item">
-      <img src="<%=request.getContextPath()%>/resources/image/5.png" class="d-block w-100" >
+      <img src="<%=request.getContextPath()%>/resources/image/6.png" class="d-block w-100" >
     </div>
   </div>
   
@@ -190,7 +190,7 @@
   
 </div>
 
-<div class="container" style="display: flex;align-items: center;height: 160px;width: 1100px;justify-content: center;margin-top: 60px;">
+<div class="container" style="display: flex;align-items: center;height: 160px;width: 1100px;justify-content: center;margin-top: 30px;">
 
 <div class="social-buttons">
 
@@ -252,7 +252,7 @@
 <br>
 <Br>
 <!-- ddd -->
-<A style="font-family: 'Noto Sans KR', sans-serif;margin-left: 400px;margin-top: 140px;font-size: 24px;">오늘의상품</A><a style="font-family: 'Noto Sans KR', sans-serif;margin-left: 950px;margin-top: 140px;color: #ff7777" href="#" >더보기</a>
+<A style="font-family: 'Noto Sans KR', sans-serif;margin-left: 400px;margin-top: 120px;font-size: 24px;">오늘의상품</A><a style="font-family: 'Noto Sans KR', sans-serif;margin-left: 950px;margin-top: 120px;color: #ff7777" href="#" >더보기</a>
 <div class="container" style="display: flex;align-items: center;height:3000px;width: 1200px;height: 400px;padding-bottom: 120px;margin-top: px;">
 
 
