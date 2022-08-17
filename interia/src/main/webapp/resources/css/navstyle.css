@@ -1,0 +1,87 @@
+@charset "EUC-KR";
+
+.form-inputs{
+    position:relative;
+}
+.form-inputs .form-control{
+    height:45px; 
+}
+
+.form-inputs .form-control:focus{
+    box-shadow:none;
+    border:1px solid #000;
+}
+
+.form-inputs i{
+    position:absolute;
+    right:10px;
+    top:15px;
+}
+
+.shop-bag{
+    background-color:#000;
+    color:#fff;
+    height:50px;
+    width:50px;
+    font-size:25px;
+    display:flex;
+    border-radius:50%;
+    align-items:center;
+    justify-content:center;
+}
+
+.qty{
+    font-size:12px;
+}
+
+
+
+.form{
+
+    position: relative;
+}
+
+.form .fa-search{
+
+    position: absolute;
+    top:20px;
+    left: 20px;
+    color: #9ca3af;
+
+}
+
+.form span{
+
+        position: absolute;
+    right: 17px;
+    top: 13px;
+    padding: 2px;
+    border-left: 1px solid #d1d5db;
+
+}
+
+.left-pan{
+    padding-left: 7px;
+}
+
+.left-pan i{
+   
+   padding-left: 10px;
+}
+
+.form-input{
+
+    height: 55px;
+    text-indent: 33px;
+    border-radius: 10px;
+}
+
+.form-input:focus{
+
+    box-shadow: none;
+    border:none;
+}
+
+.form-input:hover{
+background: #91d3ff;
+}
