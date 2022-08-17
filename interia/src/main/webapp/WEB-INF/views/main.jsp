@@ -50,108 +50,32 @@ h1 {
     
     
     
+   .items{
+  width:90%;
+  margin:0px auto;
+  margin-top: 100px;
+}
+.slick-slide{
+  margin:10px;
+}
+.slick-slide img{
+  width:100%;
+  border: 0px solid black;
+} 
     
-    
-.card {
-    position: relative;
-    display: flex;
-    width: 100px;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid #d2d2dc;
-    border-radius: 11px;
-    -webkit-box-shadow: 0px 0px 5px 0px rgb(249, 249, 250);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(212,182,212,1);
-    box-shadow: 0px 0px 5px 0px rgb(161, 163, 164);
+.slick-prev:before, .slick-next:before{
+color: black;
 }
 
- .card .card-body {
-        padding: 1rem 1rem;
- }
-
- .card-body {
-     flex: 1 1 auto;
-     padding: 1.25rem
- }
-
- 
-
-
- .logo{
-        height: 67px;
- }
-
-
-.items {
-    width: 90%;
-    margin: 0px auto;
-    margin-top: 250px
+a{
+text-decoration: none;
 }
-
-.slick-slide {
-    margin: 10px
-}
-    
-    
-    
-    
-    
-    
-}
-
-
 
 </style>
 
-<script type="text/javascript">
 
-$(document).ready(function(){
-    
-    $('.items').slick({
-  dots: true,
-  infinite: true,
-  speed: 800,
-  autoplay: true,
-  autoplaySpeed: 2000,
-  slidesToShow: 10,
-  slidesToScroll: 10,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 6,
-        slidesToScroll: 6,
-        infinite: true,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 4
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3
-      }
-    }
 
-  ]
-});
-          });
 
-</script>
-
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 </head>
 <body style="background: #fff">
@@ -227,6 +151,9 @@ $(document).ready(function(){
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color:#91d3ff;">스토어홈</a>
         </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color: #2F3438; ">전체상품</a> 
+        </li>
         <li class="nav-item">
            <a class="nav-link" aria-current="page" href="#" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color: #2F3438;">베스트</a>
         </li>
@@ -251,9 +178,7 @@ $(document).ready(function(){
          <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color: #2F3438; ">신상품</a> 
         </li>
-         <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color: #2F3438; ">지난이벤트</a> 
-        </li>
+       
       </ul>
     </div>
   </div>
@@ -316,7 +241,7 @@ $(document).ready(function(){
   
 </div>
 
-<div class="container" style="display: flex;align-items: center;height: 160px;width: 1100px;justify-content: center;">
+<div class="container" style="display: flex;align-items: center;height: 160px;width: 1100px;justify-content: center;margin-top: 60px;">
 
 <div class="social-buttons">
 
@@ -452,10 +377,83 @@ $(document).ready(function(){
 
 </div>
 
+
+
+<!-- ddd -->
+<A style="font-family: 'Noto Sans KR', sans-serif;margin-left: 400px;margin-top: 140px;font-size: 24px;">카테고리</A>
+<div class="container" style="display: flex;align-items: center;height:3000px;width: 1200px;height: 400px;padding-bottom: 120px;margin-top: px;padding-top: 50px;">
+
+
+
+<div class="social-buttons">
+
+
+			<button class="button1"
+				style="width: 80px; height: 80px; border: none; border-radius: 8px;margin: 4px 40px;background:none; ">
+				<img src="<%=request.getContextPath()%>/resources/image1/1a.webp"
+					style="width: 65px; height: 65px; border: none; border-radius: 8px;align-items: center;padding-top: 12px;">
+				<div style="margin-top: 12px;">
+				<p style="font-size: 16px;color: #2F3438;font-family: 'Noto Sans KR', sans-serif;margin-top: 8px;">가구</p>
+				</div>
+			</button>
+
+			<button class="button1"
+				style="width: 80px; height: 80px; border: none; border-radius: 8px;margin: 4px 40px;background:none;">
+				<img src="<%=request.getContextPath()%>/resources/image1/2a.webp"
+					style="width: 65px; height: 65px; border: none; border-radius: 16px;align-items: center;padding-top: 12px;">
+				<div style="margin-top: 12px;">
+				<p style="font-size: 16px;color: #2F3438;font-family: 'Noto Sans KR', sans-serif;margin-top: 8px;">가전제품</p>
+				</div>
+			</button>
+			<button class="button1"
+				style="width: 80px; height: 80px; border: none; border-radius: 8px;margin: 4px 40px;background:none;">
+				<img src="<%=request.getContextPath()%>/resources/image1/3a.webp"
+					style="width: 65px; height: 65px; border: none; border-radius: 8px;align-items: center;padding-top: 12px;">
+				<div style="margin-top: 12px;">
+				<p style="font-size: 16px;color: #2F3438;font-family: 'Noto Sans KR', sans-serif;margin-top: 8px;">조명</p>
+				</div>
+			</button>
+			<button class="button1"
+				style="width: 80px; height: 80px; border: none; border-radius: 8px;margin: 4px 40px;background:none;">
+				<img src="<%=request.getContextPath()%>/resources/image1/4a.webp"
+					style="width: 65px; height: 65px; border: none; border-radius: 8px;align-items: center;padding-top: 12px;">
+				<div style="margin-top: 12px;">
+				<p style="font-size: 16px;color: #2F3438;font-family: 'Noto Sans KR', sans-serif;margin-top: 8px;">캠핑용품</p>
+				</div>
+			</button>
+			<button class="button1"
+				style="width: 80px; height: 80px; border: none; border-radius: 8px;margin: 4px 40px;background:none;">
+				<img src="<%=request.getContextPath()%>/resources/image1/5a.webp"
+					style="width: 65px; height: 65px; border: none; border-radius: 8px;align-items: center;padding-top: 12px;">
+				<div style="margin-top: 12px;">
+				<p style="font-size: 16px;color: #2F3438;font-family: 'Noto Sans KR', sans-serif;margin-top: 8px;">생필용품</p>
+				</div>
+			</button>
+			<button class="button1"
+				style="width: 80px; height: 80px; border: none; border-radius: 8px;margin: 4px 40px;background:none;">
+				<img src="<%=request.getContextPath()%>/resources/image1/6a.webp"
+					style="width: 65px; height: 65px; border: none; border-radius: 8px;align-items: center;padding-top: 12px;">
+				<div style="margin-top: 12px;">
+				<p style="font-size: 16px;color: #2F3438;font-family: 'Noto Sans KR', sans-serif;margin-top: 8px;">주방용품</p>
+				</div>
+			</button>
+			<button class="button1"
+				style="width: 80px; height: 80px; border: none; border-radius: 8px;margin: 4px 40px;background:#BFC9AB">
+				<img src="<%=request.getContextPath()%>/resources/image1/7a.webp"
+					style="width: 65px; height: 65px; border: none; border-radius: 8px;align-items: center;padding-top: 12px;">
+				<div style="margin-top: 12px;">
+				<p style="font-size: 16px;color: #2F3438;font-family: 'Noto Sans KR', sans-serif;margin-top: 8px;">실내용품</p>
+				</div>
+			</button>
+		</div>
+
+
+
+</div>
 <!-- ㅇㅇㅇ -->
 
 <A style="font-family: 'Noto Sans KR', sans-serif;margin-left: 400px;margin-top: 140px;font-size: 24px;">인기상품</A><a style="font-family: 'Noto Sans KR', sans-serif;margin-left: 950px;margin-top: 140px;" href="#">더보기</a>
-<div class="container" style="display: flex;align-items: center;height:200px;width: 1200px;height: 400px;padding-bottom: 120px;margin-top: px;">
+<div class="container" style="display: flex;align-items: center;height:200px;width: 1200px;height: 400px;padding-bottom: 120px;margin-top: px;margin-bottom: 60px;">
 
 <Div class="row" style="margin-top: 500px;">
 

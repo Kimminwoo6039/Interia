@@ -108,7 +108,7 @@ background: #91d3ff;
     letter-spacing: 2px;
     background-color: transparent;
     cursor: pointer;
-    border: 2px solid #91d3ff;
+    border: 1px solid #91d3ff;
     border-radius: 3px;
     color: #91d3ff;
     transition: all 0.5s;
