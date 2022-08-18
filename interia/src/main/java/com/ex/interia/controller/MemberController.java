@@ -29,7 +29,23 @@ public class MemberController {
 	
 	
 	@RequestMapping("joinAction.do")
-    public String joinAction(MemberVo vo) {
+    public String joinAction(MemberVo vo) throws Exception{
+		
+		try {
+		int count = memberService.count(vo); // 똑같은 아이디로 가입되어잇는지 확인
+		
+		if(count != 0) {
+			return "redirect:/member/join.do?message=error"; // 이미 있는 아이디이면 메세지랑 같이 전달해줌
+		}
+		
+		} catch (Exception e) {
+           e.printStackTrace();
+           return "login/join";
+		}
+		
+		
+		
+		
 		// result = SQL 문 실행결과에 따라 1,0 의 값을 받기
 		int result = memberService.joinAction(vo);
 		
@@ -49,21 +65,33 @@ public class MemberController {
 	}
 	
 	@RequestMapping("loginAction.do")
-	public String loginAction(MemberVo vo,HttpSession session) {
+	public String loginAction(MemberVo vo,HttpSession session) throws Exception{
 		// 이름을 받아옴
-		String name = memberService.loginAction(vo);
-		System.out.println("name="+name);
+	
 		
-		if(name !=null) {
-			System.out.println("22");
-			session.setAttribute("memberid", vo.getMemberid());
-			session.setAttribute("name", name);
-		}else {
-			System.out.println("3");
+		
+		
+		try {
+			String name = memberService.loginAction(vo);
+			if(name !=null) {
+				System.out.println("22");
+				session.setAttribute("memberid", vo.getMemberid());
+				session.setAttribute("name", name);
+			}else {
+				System.out.println("3");
+				return "login/login";
+			}
+			System.out.println("11");
+			return "redirect:/";
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
 			return "login/login";
 		}
-		System.out.println("11");
-		return "redirect:/";
+		
+	
+		
 	}
 	
 	

@@ -16,7 +16,11 @@ select membername from teammember where memberid = #{memberid} and memberpw =#{m
 
 </select>
 	
+<select id="count" resultType="int">
 
+select count(*) from teammember where memberid = #{memberid} and memberpw =#{memberpw}
+
+</select>
 	
 </mapper>
 

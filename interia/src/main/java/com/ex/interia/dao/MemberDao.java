@@ -1,5 +1,6 @@
 package com.ex.interia.dao;
 
+import org.apache.ibatis.jdbc.SQL;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -25,6 +26,11 @@ public class MemberDao {
 	
 	public String loginAction(MemberVo vo) {
 		return sqlSession.selectOne(Mapper+".loginAction", vo);
+	}
+
+
+	public int count(MemberVo vo) {
+		return sqlSession.selectOne(Mapper+".count", vo);
 	}
 	
 }

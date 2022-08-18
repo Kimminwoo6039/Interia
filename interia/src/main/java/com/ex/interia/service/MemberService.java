@@ -24,5 +24,9 @@ public class MemberService {
 	public String loginAction(MemberVo vo) {
 		return memberDao.loginAction(vo);
 	}
+
+	public int count(MemberVo vo) {
+		return memberDao.count(vo);
+	}
 	
 }

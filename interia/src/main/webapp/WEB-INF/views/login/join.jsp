@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,11 +50,12 @@ function check(){
 
 <div class="login-form" style="margin-top: 150px;">
      <h2 style="color: #35c5f0;text-align:center;">회원가입</h2>
-     
+     	
      <div class="form-group ">
        <input type="text" class="form-control" placeholder="아이디 " name="memberid">
-       <i class="mdi mdi-account"></i>
+          <c:if test="${param.message == 'error'}"><div style="color: red">아이디가 중복입니다.</div></c:if>
      </div>
+  
      <div class="form-group log-status">
        <input type="password" class="form-control" placeholder="비밀번호" name="memberpw">
        <i class="mdi mdi-lock"></i>
