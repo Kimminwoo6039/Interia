@@ -52,14 +52,17 @@ public class MemberController {
 	public String loginAction(MemberVo vo,HttpSession session) {
 		// 이름을 받아옴
 		String name = memberService.loginAction(vo);
+		System.out.println("name="+name);
 		
 		if(name !=null) {
+			System.out.println("22");
 			session.setAttribute("memberid", vo.getMemberid());
 			session.setAttribute("name", name);
 		}else {
+			System.out.println("3");
 			return "login/login";
 		}
-		
+		System.out.println("11");
 		return "redirect:/";
 	}
 	
