@@ -220,7 +220,7 @@
 
 		</div>
 		
-<c:if test="${sessionScope.memberid != null }">
+<c:if test="${sessionScope.memberid == null }">
 
 <a href="<%=request.getContextPath()%>/product/write.do" style="float:inherit;margin-left: 350px;">
 <button type="button" class="btn btn-sm bg-dark text-white">
