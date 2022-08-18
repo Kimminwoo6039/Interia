@@ -73,7 +73,7 @@ limit #{pageStart},#{perPageNumber}
 
 
 <!-- 상품 수정 상세화면 -->
-<select id="edit">
+<select id="edit" resultType="com.ex.interia.vo.ProductVo" >
 select * from teamproduct where product_code = #{product_code}
 </select>
 

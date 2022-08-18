@@ -42,10 +42,11 @@
 								<div class="col-md-12">
 
 									<div class="form">
-										<i class="fa fa-search"></i> <input type="text"
-											class="form-control form-input" placeholder="상품검색"> <span
-											class="left-pan"><i class="fa fa-microphone"></i></span>
-
+										<i class="fa fa-search"></i>
+										<form action="<%=request.getContextPath()%>/product/list.do">
+										 <input type="text" class="form-control form-input" placeholder="상품검색" name="keyword"> <span class="left-pan">
+										 <i class="fa fa-microphone"></i></span>
+                                       </form>
 									</div>
 
 								</div>
@@ -234,7 +235,7 @@
 	
 	<!-- 아이템 -->
 	
-	<div class="row" style="width: 1400px;margin: auto;margin-bottom: 200px;">
+	<div class="row" style="width: 1250px;margin: auto;margin-bottom: 200px;">
 	
 	
 	<c:forEach var="row" items="${list}">
@@ -254,7 +255,7 @@
 					</span>
 					
 					<!-- 상품수정하는 페이지 -->
-					<c:if test="${session.Scope.memberid !=null}">
+					<c:if test="${session.Scope.memberid ==null}">
 					
 					<a href="<%=request.getContextPath()%>/product/edit/${row.product_code}">
 					
