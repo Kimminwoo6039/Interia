@@ -71,8 +71,7 @@ function check(){
              <label>브랜드</label>
 
 				<div class="input-group mb-3">
-					<select class="form-select bg-light form-control"
-						name="product_brand">
+					<select class="form-select bg-light form-control" name="product_brand">
 						<option value="가구">가구</option>
 						<option value="조명">조명</option>
 						<option value="캠핑">캠핑</option>
