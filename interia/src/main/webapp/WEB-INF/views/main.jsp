@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,14 +69,31 @@
 
 					<div class="col-md-4">
 						<div class="d-flex d-none d-md-flex flex-row align-items-center">
-							<div class="d-flex flex-column ms-1">
-
-								<a href="#"  style="color: #666366;text-decoration: none;list-style: none;"><span class="fw-bold">로그인</span></a>
+						
+						
+						  <c:if test="${sessionScope.memberid==null}">
+							<div class="d-flex flex-column ms-1">                              
+								<a href="<%=request.getContextPath()%>/member/login.do"  style="color: #666366;text-decoration: none;list-style: none;"><span class="fw-bold">로그인</span></a>
 							</div>
 							<div class="d-flex flex-column ms-2">
 
-								<a href="#"  style="color: #666366;text-decoration: none;list-style: none;"><span class="fw-bold">회원가입</span></a>
+								<a href="<%=request.getContextPath()%>/member/join.do"  style="color: #666366;text-decoration: none;list-style: none;"><span class="fw-bold">회원가입</span></a>
+								</div>
+                                 </c:if>
+                                 
+                                   <c:if test="${sessionScope.memberid!=null}">
+							<div class="d-flex flex-column ms-1">                              
+								<strong style="font-size: 14px;color: #91d3ff"> ${sessionScope.name} 님 어서오세요 </strong>
 							</div>
+							<div class="d-flex flex-column ms-2">
+
+								<a href="<%=request.getContextPath()%>/member/logout.do"  style="color: #666366;text-decoration: none;list-style: none;"><span class="fw-bold">로그아웃</span></a>
+								</div>
+                                 </c:if>
+                                				
+								
+								
+							
 							<div class="d-flex flex-column ms-2">
 
 								<a href="#"  style="color: #666366;text-decoration: none;list-style: none;"><span class="fw-bold">고객센터</span></a>
@@ -98,10 +117,10 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color:#91d3ff;">스토어홈</a>
+          <a class="nav-link active" aria-current="page" href="<%=request.getContextPath()%>/" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color:#91d3ff;">스토어홈</a>
         </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color: #2F3438; ">전체상품</a> 
+            <a class="nav-link" aria-current="page" href="<%=request.getContextPath()%>/product/list.do" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color: #2F3438; ">전체상품</a> 
         </li>
         <li class="nav-item">
            <a class="nav-link" aria-current="page" href="#" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color: #2F3438;">베스트</a>
@@ -336,7 +355,7 @@
 
 <div class="social-buttons">
 
-
+<a href="<%=request.getContextPath()%>/product/list.do?brand=가구">
 			<button class="button1"
 				style="width: 80px; height: 80px; border: none; border-radius: 8px;margin: 4px 40px;background:none; ">
 				<img src="<%=request.getContextPath()%>/resources/image1/1a.webp"
@@ -345,7 +364,8 @@
 				<p style="font-size: 16px;color: #2F3438;font-family: 'Noto Sans KR', sans-serif;margin-top: 8px;">가구</p>
 				</div>
 			</button>
-
+</a>
+<a href="<%=request.getContextPath()%>/product/list.do?brand=가전제품">
 			<button class="button1"
 				style="width: 80px; height: 80px; border: none; border-radius: 8px;margin: 4px 40px;background:none;">
 				<img src="<%=request.getContextPath()%>/resources/image1/2a.webp"
@@ -354,6 +374,8 @@
 				<p style="font-size: 16px;color: #2F3438;font-family: 'Noto Sans KR', sans-serif;margin-top: 8px;">가전제품</p>
 				</div>
 			</button>
+</a>
+<a href="<%=request.getContextPath()%>/product/list.do?brand=조명">
 			<button class="button1"
 				style="width: 80px; height: 80px; border: none; border-radius: 8px;margin: 4px 40px;background:none;">
 				<img src="<%=request.getContextPath()%>/resources/image1/3a.webp"
@@ -362,6 +384,8 @@
 				<p style="font-size: 16px;color: #2F3438;font-family: 'Noto Sans KR', sans-serif;margin-top: 8px;">조명</p>
 				</div>
 			</button>
+</a>
+<a href="<%=request.getContextPath()%>/product/list.do?brand=캠핌용품">			
 			<button class="button1"
 				style="width: 80px; height: 80px; border: none; border-radius: 8px;margin: 4px 40px;background:none;">
 				<img src="<%=request.getContextPath()%>/resources/image1/4a.webp"
@@ -370,6 +394,8 @@
 				<p style="font-size: 16px;color: #2F3438;font-family: 'Noto Sans KR', sans-serif;margin-top: 8px;">캠핑용품</p>
 				</div>
 			</button>
+</a>
+<a href="<%=request.getContextPath()%>/product/list.do?brand=생필용품">
 			<button class="button1"
 				style="width: 80px; height: 80px; border: none; border-radius: 8px;margin: 4px 40px;background:none;">
 				<img src="<%=request.getContextPath()%>/resources/image1/5a.webp"
@@ -378,6 +404,8 @@
 				<p style="font-size: 16px;color: #2F3438;font-family: 'Noto Sans KR', sans-serif;margin-top: 8px;">생필용품</p>
 				</div>
 			</button>
+</a>
+<a href="<%=request.getContextPath()%>/product/list.do?brand=주방용품">			
 			<button class="button1"
 				style="width: 80px; height: 80px; border: none; border-radius: 8px;margin: 4px 40px;background:none;">
 				<img src="<%=request.getContextPath()%>/resources/image1/6a.webp"
@@ -386,6 +414,8 @@
 				<p style="font-size: 16px;color: #2F3438;font-family: 'Noto Sans KR', sans-serif;margin-top: 8px;">주방용품</p>
 				</div>
 			</button>
+</a>
+<a href="<%=request.getContextPath()%>/product/list.do?brand=실내용품">
 			<button class="button1"
 				style="width: 80px; height: 80px; border: none; border-radius: 8px;margin: 4px 40px;background:#BFC9AB">
 				<img src="<%=request.getContextPath()%>/resources/image1/7a.webp"
@@ -394,6 +424,7 @@
 				<p style="font-size: 16px;color: #2F3438;font-family: 'Noto Sans KR', sans-serif;margin-top: 8px;">실내용품</p>
 				</div>
 			</button>
+</a>			
 		</div>
 
 

@@ -61,13 +61,13 @@
 						<div class="d-flex d-none d-md-flex flex-row align-items-center">
 							<div class="d-flex flex-column ms-1">
 
-								<a href="#"
+								<a href="<%=request.getContextPath()%>/member/login.do"
 									style="color: #666366; text-decoration: none; list-style: none;"><span
 									class="fw-bold">로그인</span></a>
 							</div>
 							<div class="d-flex flex-column ms-2">
 
-								<a href="#"
+								<a href="<%=request.getContextPath()%>/member/join.do"
 									style="color: #666366; text-decoration: none; list-style: none;"><span
 									class="fw-bold">회원가입</span></a>
 							</div>
@@ -105,7 +105,7 @@
 							style="font-family: 'Noto Sans KR', sans-serif; font-size: 18px; color: #2F3438;">스토어홈</a>
 						</li>
 						<li class="nav-item"><a class="nav-link active" aria-current="page"
-							href="#"
+							href="<%=request.getContextPath()%>/product/list.do"
 							style="font-family: 'Noto Sans KR', sans-serif; font-size: 18px; color: #91d3ff;">전체상품</a>
 						</li>
 						<li class="nav-item"><a class="nav-link" aria-current="page"
@@ -159,23 +159,22 @@
 		<div style="display: flex;text-decoration: none;">
 		
 			<ul style="padding-left: 100px;text-decoration: none;">
-				<li style="margin-top: 10px;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;color: black;"><a
-					href="<%=request.getContextPath()%>/shop/product/list.do?brand=GUCCI" style="color: #000;">가구</a></li>
+				<li style="margin-top: 10px;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;color: black;"><a href="<%=request.getContextPath()%>/product/list.do?product_brand=가구" style="color: #000;">가구</a></li>
 				<li style="margin-top: 10px;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;"><a
-					href="<%=request.getContextPath()%>/shop/product/list.do?brand=BOTTEGA VENETA" style="color: #000;">가전제품
+					href="<%=request.getContextPath()%>/product/list.do?product_brand=가전제품" style="color: #000;">가전제품
 						</a></li>
 				<li style="margin-top: 10px;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;"> <a
-					href="<%=request.getContextPath()%>/shop/product/list.do?brand=BURBERRY" style="color: #000;">조명</a></li>
+					href="<%=request.getContextPath()%>/product/list.do?product_brand=조명" style="color: #000;">조명</a></li>
 				<li style="margin-top: 10px;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;"><a
-					href="<%=request.getContextPath()%>/shop/product/list.do?brand=MAISON MARGIELA" style="color: #000;">
+					href="<%=request.getContextPath()%>/product/list.do?product_brand=캠핑용품" style="color: #000;">
 						캠핌용품</a></li>
 				<li style="margin-top: 10px;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;"><a
-					href="<%=request.getContextPath()%>/shop/product/list.do?brand=THOM BROWN" style="color: #000;">
+					href="<%=request.getContextPath()%>/product/list.do?product_brand=생필용품" style="color: #000;">
 						생필용품</a></li>
 				<li style="margin-top: 10px;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;"><a
-					href="<%=request.getContextPath()%>/shop/product/list.do?brand=VALETINO" style="color: #000;">주방용품</a></li>
+					href="<%=request.getContextPath()%>/product/list.do?product_brand=주방용품" style="color: #000;">주방용품</a></li>
 					<li style="margin-top: 10px;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;"><a
-					href="<%=request.getContextPath()%>/shop/product/list.do?brand=GUCCI" style="color: #000;">실내용품</a></li>
+					href="<%=request.getContextPath()%>/product/list.do?product_brand=실내용품" style="color: #000;">실내용품</a></li>
 			</ul>
 			
 			<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="width: 1150px;height: 100px;margin-left: 190px;">
@@ -244,12 +243,17 @@
 			
 				<div class="product">
 				
-					
+					<a href="<%=request.getContextPath()%>/product/detail/${row.product_code}">
 					<img src="<%=request.getContextPath()%>/resources/images/${row.filename}"
 						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
+				    </a>
 					<ul style="justify-content: center;">
 					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">${row.product_brand}</span>
-					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">${row.product_name}</span><br>
+					
+					<a href="<%=request.getContextPath()%>/product/detail/${row.product_code}">
+					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">${row.product_name}</span>
+					</a>
+					<br>
 					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">	
 					<fmt:formatNumber value="${row.product_price}" pattern="#,###" />&nbsp;원 
 					</span>

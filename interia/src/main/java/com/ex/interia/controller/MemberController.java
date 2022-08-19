@@ -32,29 +32,35 @@ public class MemberController {
     public String joinAction(MemberVo vo) throws Exception{
 		
 		try {
-		int count = memberService.count(vo); // 똑같은 아이디로 가입되어잇는지 확인
+			/*
+			 * int count = memberService.count(vo); // �삊媛숈� �븘�씠�뵒濡� 媛��엯�릺�뼱�엲�뒗吏� �솗�씤
+			 * 
+			 * if(count == 0) { return "redirect:/member/join.do?message=error"; // �씠誘�
+			 * �엳�뒗 �븘�씠�뵒�씠硫� 硫붿꽭吏��옉 媛숈씠 �쟾�떖�빐以� }
+			 */
 		
-		if(count != 0) {
-			return "redirect:/member/join.do?message=error"; // 이미 있는 아이디이면 메세지랑 같이 전달해줌
-		}
+		
+	    int result = memberService.joinAction(vo);
+		
+		
+	    if(result==1) {
+	    	return "login/login";
+	 /*   }else{
+	    	return "login/join";
+	    }*/
+		
+	    }
 		
 		} catch (Exception e) {
            e.printStackTrace();
-           return "login/join";
+           return "redirect:/member/join.do?message=error";
 		}
 		
 		
 		
 		
-		// result = SQL 문 실행결과에 따라 1,0 의 값을 받기
-		int result = memberService.joinAction(vo);
-		
-		// 정상적으로 데이터베이스 저장
-	    if(result==1) {
-	    	return "login/login";
-	    }else{
-	    	return "login/join";
-	    }
+		return "login/login";
+	
 		
 	}
 	
@@ -66,7 +72,7 @@ public class MemberController {
 	
 	@RequestMapping("loginAction.do")
 	public String loginAction(MemberVo vo,HttpSession session) throws Exception{
-		// 이름을 받아옴
+		// �씠由꾩쓣 諛쏆븘�샂
 	
 		
 		
@@ -94,5 +100,11 @@ public class MemberController {
 		
 	}
 	
+	
+	@RequestMapping("logout.do")
+	public String logout(HttpSession session) {
+		session.invalidate(); //세션삭제
+		return "redirect:/";
+	}
 	
 }

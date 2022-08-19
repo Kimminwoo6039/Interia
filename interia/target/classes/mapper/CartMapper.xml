@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "cart">
+
+
+<insert id="insert"> <!-- CartDao 에서 Mapper . 뒤에값을 id로 가져옴 -->
+
+insert into teamcart(memberid,product_code,amount) values(#{memberid},#{product_code},#{amount})
+
+</insert>
+
+
+<!-- 장바구니 리스트 페이지 -->
+
+<select id="list" resultType="com.ex.interia.vo.TotalVo"> <!-- 반환값 꼭 써줘야함 안쓰면 안됨.. -->
+
+           <!-- 상품한개 가격당 금액을 price * amount = money 로 구함 ㅎ -->
+select * ,product_price * amount money from teammember m,teamproduct p,teamcart c where m.memberid = c.memberid and c.product_code =p.product_code and c.memberid =#{memberid}
+
+
+</select>
+
+
+<!-- 로그인한 회원이 총 장바구니에 담은 금액 확인하기 -->
+
+<select id="sumMoney" resultType="int">
+
+select coalesce(sum(product_price * amount),0) from teamcart c , teamproduct p where c.product_code = p.product_code and memberid=#{memberid}
+
+</select>
+
+<!-- 개별삭제하기 -->
+
+<delete id="delete">
+
+delete from teamcart where cart_id = #{cart_id}
+
+</delete>
+
+<!-- 전체삭제하기 -->
+
+<delete id="deleteAll">
+
+delete from teamcart where memberid = #{memberid}
+
+</delete>
+	
+	
+	
+<!-- 상품수량변경 -->
+
+
+<update id="update">
+
+update teamcart set amount = #{amount} where cart_id = #{cart_id}
+
+</update>	
+	
+</mapper>
+
