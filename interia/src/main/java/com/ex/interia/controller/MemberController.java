@@ -32,12 +32,6 @@ public class MemberController {
     public String joinAction(MemberVo vo) throws Exception{
 		
 		try {
-			/*
-			 * int count = memberService.count(vo); // �삊媛숈� �븘�씠�뵒濡� 媛��엯�릺�뼱�엲�뒗吏� �솗�씤
-			 * 
-			 * if(count == 0) { return "redirect:/member/join.do?message=error"; // �씠誘�
-			 * �엳�뒗 �븘�씠�뵒�씠硫� 硫붿꽭吏��옉 媛숈씠 �쟾�떖�빐以� }
-			 */
 		
 		
 	    int result = memberService.joinAction(vo);
@@ -45,9 +39,7 @@ public class MemberController {
 		
 	    if(result==1) {
 	    	return "login/login";
-	 /*   }else{
-	    	return "login/join";
-	    }*/
+	
 		
 	    }
 		
