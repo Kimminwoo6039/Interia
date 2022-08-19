@@ -92,20 +92,20 @@
 			<ul style="padding-left: 100px;text-decoration: none;">
 				<li style="margin-top: 10px;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;color: black;"><a href="<%=request.getContextPath()%>/product/list.do?product_brand=가구" style="color: #000;">가구</a></li>
 				<li style="margin-top: 10px;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;"><a
-					href="<%=request.getContextPath()%>/product/list.do?product_brand=가전제품" style="color: #000;">가전제품
+					href="<%=request.getContextPath()%>/product/list.do?brand=가전제품" style="color: #000;">가전제품
 						</a></li>
 				<li style="margin-top: 10px;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;"> <a
-					href="<%=request.getContextPath()%>/product/list.do?product_brand=조명" style="color: #000;">조명</a></li>
+					href="<%=request.getContextPath()%>/product/list.do?brand=조명" style="color: #000;">조명</a></li>
 				<li style="margin-top: 10px;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;"><a
-					href="<%=request.getContextPath()%>/product/list.do?product_brand=캠핑용품" style="color: #000;">
+					href="<%=request.getContextPath()%>/product/list.do?brand=캠핑용품" style="color: #000;">
 						캠핌용품</a></li>
 				<li style="margin-top: 10px;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;"><a
-					href="<%=request.getContextPath()%>/product/list.do?product_brand=생필용품" style="color: #000;">
+					href="<%=request.getContextPath()%>/product/list.do?brand=생필용품" style="color: #000;">
 						생필용품</a></li>
 				<li style="margin-top: 10px;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;"><a
-					href="<%=request.getContextPath()%>/product/list.do?product_brand=주방용품" style="color: #000;">주방용품</a></li>
+					href="<%=request.getContextPath()%>/product/list.do?brand=주방용품" style="color: #000;">주방용품</a></li>
 					<li style="margin-top: 10px;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;"><a
-					href="<%=request.getContextPath()%>/product/list.do?product_brand=실내용품" style="color: #000;">실내용품</a></li>
+					href="<%=request.getContextPath()%>/product/list.do?brand=실내용품" style="color: #000;">실내용품</a></li>
 			</ul>
 			
 			<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="width: 1150px;height: 100px;margin-left: 190px;">

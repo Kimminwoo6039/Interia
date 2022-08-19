@@ -67,7 +67,14 @@ if (amount==0){
 	}
 </script>
 
+<style type="text/css">
 
+button:hover{
+opacity: 0.7;
+}
+
+
+</style>
 
 
 
@@ -294,11 +301,13 @@ if (amount==0){
 				<div class="production-selling-header__info-wrap">
 					<div class="production-selling-header__delivery">
 						<div class="production-selling-header__delivery__title-wrap">
-							<span>배송</span>
+							<span>혜택</span>
 						</div>
 						<div class="production-selling-header__delivery__content-wrap">
 							<span class="production-selling-header__delivery__type">
-								100.000원 이상구매시 무료</span>
+								2,097P 적립 (WELCOME 0.3% 적립)</span>
+								<span class="production-selling-header__delivery__type">
+								월 87,375원 (8개월) 무이자할부</span>
 						</div>
 					</div>
 				</div>
@@ -307,12 +316,17 @@ if (amount==0){
 					<div class="production-selling-header__info-wrap">
 					<div class="production-selling-header__delivery">
 						<div class="production-selling-header__delivery__title-wrap">
-							<span>브랜드</span>
+							<span>배송</span>
 						</div>
 						<div class="production-selling-header__delivery__content-wrap">
-							<span class="production-selling-header__delivery__type">배송
-								상품정보 참고</span>
+							<strong><span class="production-selling-header__delivery__type" style="opacity: 1">2,500원 <span style="font-size: 12px;opacity: 0.8">(100,000원 이상 무료배송)</span></span></strong>
+								<span class="production-selling-header__delivery__type">
+								일반택배</span>
+								<svg class="check-icon" width="10" height="9" fill="none" preserveAspectRatio="xMidYMid meet"><path d="M1 3.83l2.153 3.03a1 1 0 001.627.005L9 1" stroke="#BDBDBD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+								<span style="opacity: 0.5">제주도/도서산간 지역 15,000원</span>
+								
 						</div>
+						<span class="production-selling-header__delivery__expectation__header"><svg class="delivery-time-icon" width="24" height="24" fill="none" preserveAspectRatio="xMidYMid meet"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.303 5.04l.394.92L7 8.83V12a.5.5 0 01-1 0V8.17l7.303-3.13z" fill="#00B8F0"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M10.197 4.628a.5.5 0 00-.394 0L4.269 7 10 9.456 15.73 7l-2.427-1.04-3.106-1.332zM3.5 14.341V7.758l6 2.572v6.912L3.803 14.8a.5.5 0 01-.303-.46zm7 2.9l1.534-.657a5 5 0 014.466-5.56V7.759l-6 2.572v6.912zm.09 1.05l1.664-.713A5.002 5.002 0 0022 16a5 5 0 00-4.5-4.975V7.659a1.5 1.5 0 00-.91-1.378l-2.893-1.24-3.106-1.332a1.5 1.5 0 00-1.182 0l-6 2.572A1.5 1.5 0 002.5 7.659v6.682c0 .6.358 1.142.91 1.378l6 2.572a1.5 1.5 0 001.18 0zM17 20a4 4 0 100-8 4 4 0 000 8zm.5-6.5a.5.5 0 00-1 0v2H15a.5.5 0 000 1h2a.5.5 0 00.5-.5v-2.5z" fill="#3F474D"></path></svg><span class="text"><span class="date">8/24(수) </span>도착 예정 <b>84%</b></span><svg class="arrow-icon" width="16" height="16" fill="none" preserveAspectRatio="xMidYMid meet"><path d="M13 11.333L8 6.501l-5 4.832-1-.917 6-5.75 6 5.75-1 .917z" fill="#828C94"></path></svg></span>
 					</div>
 				</div>
 					
@@ -351,8 +365,7 @@ if (amount==0){
 								class="btn btn-outline-dark  " style="width: 40px;">
 							<div value="result" id='result' style="margin: 10px;">0</div>
 							<input name="amount" id="amount" value="" type="hidden">
-							<input type='button' onclick='count("plus")' value='+'
-								class="btn btn-dark" / style="width: 40px;background: #91d3ff;opacity: 0.8">
+							<input type='button' onclick='count("plus")' value='+' class="btn btn-dark" style="width: 40px;background: #09addb;color: white;">
 						</div>
 
 
@@ -397,10 +410,10 @@ if (amount==0){
 				</div>
 				<div class="production-selling-option-form__footer">
 					<button
-						class="button button--color-blue-inverted button--size-55 button--shape-4"
+						class="button button--color-blue-inverted button--size-55 button--shape-4" style="width: 228px;height: 55px;color: #09addb"
 						type="button" onclick="location.href='<%=request.getContextPath()%>/product/list.do'">목록으로</button>
 					<button
-						class="button button--color-blue button--size-55 button--shape-4"
+						class="button button--color-blue button--size-55 button--shape-4" style="width: 228px;height: 55px;background: #09addb;color: white;
 						type="button" onclick="check()">구매하기</button>
 				</div>
 			</div>
