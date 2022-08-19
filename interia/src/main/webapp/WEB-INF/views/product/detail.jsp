@@ -22,8 +22,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;900&display=swap"
 	rel="stylesheet">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/navstyle.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/navstyle.css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
@@ -75,76 +74,7 @@ if (amount==0){
 </head>
 <body>
 
-	<!-- navbar -->
-	<div class="container">
-		<header class="section-header">
-
-			<section class="header-main border-bottom bg-white">
-				<div class="container-fluid">
-					<div class="row p-2 pt-3 pb-3 d-flex align-items-center">
-						<div class="col-md-2">
-							<a
-								style="color: #212629; font-size: 28px; font-family: 'Noto Sans KR', sans-serif;"
-								href="<%=request.getContextPath()%>/">오늘의 인테리어</a>
-						</div>
-
-
-						<div class="col-md-6">
-
-							<div class="container">
-
-								<div
-									class="row height d-flex justify-content-center align-items-center">
-
-									<div class="col-md-12">
-
-										<div class="form">
-											<i class="fa fa-search"></i>
-											<form action="<%=request.getContextPath()%>/product/list.do">
-												<input type="text" class="form-control form-input"
-													placeholder="상품검색" name="keyword"> <span
-													class="left-pan"> <i class="fa fa-microphone"></i></span>
-											</form>
-										</div>
-
-									</div>
-
-								</div>
-
-							</div>
-
-						</div>
-
-						<div class="col-md-4">
-							<div class="d-flex d-none d-md-flex flex-row align-items-center">
-								<div class="d-flex flex-column ms-1">
-
-									<a href="<%=request.getContextPath()%>/member/login.do"
-										style="color: #666366; text-decoration: none; list-style: none;"><span
-										class="fw-bold">로그인</span></a>
-								</div>
-								<div class="d-flex flex-column ms-2">
-
-									<a href="<%=request.getContextPath()%>/member/join.do"
-										style="color: #666366; text-decoration: none; list-style: none;"><span
-										class="fw-bold">회원가입</span></a>
-								</div>
-								<div class="d-flex flex-column ms-2">
-
-									<a href="#"
-										style="color: #666366; text-decoration: none; list-style: none;"><span
-										class="fw-bold">고객센터</span></a>
-								</div>
-								<div class="d-flex flex-column ms-6" style="margin-left: 60px;">
-
-									<a href="#"> <i class="fa-solid fa-cart-shopping"
-										style="font-size: 30px; color: black;"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+	<%@ include file="../menu/include.jsp"%>
 
 			<nav
 				class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
@@ -294,7 +224,7 @@ if (amount==0){
 					
 						<a class="production-selling-header__title__brand" style="margin-right: 420px;">
 						
-						삼성전자
+						${vo.product_brand}
 						
 						</a>
 						
@@ -306,8 +236,7 @@ if (amount==0){
 					<!-- 상품명 -->
 					 
 						<span class="production-selling-header__title__name">
-						[오늘의딜][사전예판]
-							신모델런칭 갤럭시 Z플립4 Z폴드4 256G 512GB</span>
+					${vo.product_name}
 							
 							
 							
@@ -341,7 +270,11 @@ if (amount==0){
 					<div class="production-selling-header__price">
 						<span class="production-selling-header__price__price-wrap"><span
 							class="production-selling-header__price__price"><span
-								class="number">1,353,000</span><span class="won">원</span>
+								class="number">
+								<fmt:formatNumber
+											value="${vo.product_price}" pattern="#,###" />
+											
+											</span><span class="won">원</span>
 								<span lass="production-selling-header__price__badge" style="margin-top: 1px;">
 								<svg class="icon" width="30" height="20" viewBox="0 0 30 20"
 										preserveAspectRatio="xMidYMid meet">
@@ -459,7 +392,7 @@ if (amount==0){
 					<p class="selling-option-form-content__price">
 						<span class="selling-option-form-content__price__left">주문금액</span><span
 							class="selling-option-form-content__price__right"><span
-							class="selling-option-form-content__price__number">1,353,000</span>원</span>
+							class="selling-option-form-content__price__number"><fmt:formatNumber value="${vo.product_price}" pattern="#,###" /></span>원</span>
 					</p>
 				</div>
 				<div class="production-selling-option-form__footer">
