@@ -68,7 +68,7 @@ public class CartController {
 			map.put("list", list); // 한사람이 구매한 목록
 			map.put("count", list.size()); //장바구니에 들어있는 총 수량
 			mav.setViewName("cart/cart_list"); // 리스트페이지로 이동
-			
+			map.put("total", sumMoney+fee);
 			mav.addObject("map", map); // 맵 에다가 담아서 가져가기위함.
 			return mav;
 			

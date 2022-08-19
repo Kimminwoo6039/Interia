@@ -11,7 +11,7 @@
 
 
 <!-- navbar -->
-<div class="container">
+<div class="container" style="width: 2000px;">
 	<header class="section-header">
 
 <section class="header-main border-bottom bg-white">
@@ -30,11 +30,12 @@
 
               <div class="col-md-12">
 
+              <form action="<%=request.getContextPath()%>/product/list.do">
                 <div class="form">
                   <i class="fa fa-search"></i>
-                  <input type="text" class="form-control form-input" placeholder="상품검색">
+                  <input type="text" class="form-control form-input" placeholder="상품검색" name="keyword">
                   <span class="left-pan"><i class="fa fa-microphone"></i></span>
-              
+              </form>
                 </div>
                 
               </div>
@@ -49,7 +50,8 @@
 						<div class="d-flex d-none d-md-flex flex-row align-items-center">
 						
 						
-						  <c:if test="${sessionScope.memberid==null}">
+						     <c:if test="${sessionScope.memberid==null}">
+						  
 							<div class="d-flex flex-column ms-1">                              
 								<a href="<%=request.getContextPath()%>/member/login.do"  style="color: #666366;text-decoration: none;list-style: none;"><span class="fw-bold">로그인</span></a>
 							</div>
@@ -57,21 +59,23 @@
 
 								<a href="<%=request.getContextPath()%>/member/join.do"  style="color: #666366;text-decoration: none;list-style: none;"><span class="fw-bold">회원가입</span></a>
 								</div>
-                                 </c:if>
+								 </c:if>
                                  
-                                   <c:if test="${sessionScope.memberid!=null}">
+                                 
+                                   <c:if test="${sessionScope.memberid != null}">
+                                   
 							<div class="d-flex flex-column ms-1">                              
 								<strong style="font-size: 14px;color: #91d3ff"> ${sessionScope.name} 님 어서오세요 </strong>
 							</div>
 							<div class="d-flex flex-column ms-2">
 
 								<a href="<%=request.getContextPath()%>/member/logout.do"  style="color: #666366;text-decoration: none;list-style: none;"><span class="fw-bold">로그아웃</span></a>
+								
 								</div>
-                                 </c:if>
-                                				
+                                	
 								
 								
-							
+							        </c:if>
 							<div class="d-flex flex-column ms-2">
 
 								<a href="#"  style="color: #666366;text-decoration: none;list-style: none;"><span class="fw-bold">고객센터</span></a>

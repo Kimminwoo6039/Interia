@@ -18,6 +18,7 @@ public class TotalVo {
 	private String memberemail;
 	private int cart_id;
 	private int amount;
+	private int money;
 	
 	
 	
@@ -30,6 +31,12 @@ public class TotalVo {
 	
 	
 	
+	public int getMoney() {
+		return money;
+	}
+	public void setMoney(int money) {
+		this.money = money;
+	}
 	public int getProduct_code() {
 		return product_code;
 	}
