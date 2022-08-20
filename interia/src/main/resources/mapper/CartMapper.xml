@@ -58,5 +58,15 @@ update teamcart set amount = #{amount} where cart_id = #{cart_id}
 
 </update>	
 	
+	
+	
+<insert id="pay">
+
+insert into teamorder(order_id,order_name,order_phone,order_product,order_sum,order_addr1,order_addr2,order_addr3,order_code,order_cart)
+values(#{order_id},#{order_name},#{order_phone},#{order_product},#{order_sum},#{order_addr1},#{order_addr2},#{order_addr3},#{order_code},#{order_cart})
+
+</insert>	
+	
+	
 </mapper>
 

@@ -38,10 +38,16 @@ $(function(){
 	})
 	
 	
+
+	
+	
 })
 
 
 </script>
+
+
+
 
 
 </head>
@@ -50,6 +56,7 @@ $(function(){
 
 <%@ include file="../menu/include.jsp"%>
 
+<form action="<%=request.getContextPath()%>/cart/update.do" method="post">
 <div class="commerce-cart-wrap">
 	<div class="container">
 		<div class="commerce-cart row">
@@ -71,101 +78,99 @@ $(function(){
 								class="commerce-cart__header__right"></span>
 						</div>
 					</div>
-					
-			
-			<c:forEach var="row" items="${map.list}">
-				
-					
-<ul class="commerce-cart__content__group-list">
-	<li class="commerce-cart__content__group-item"><article
-			class="commerce-cart__group">
-			<h1 class="commerce-cart__group__header">제품 상세</h1>
-			<ul class="commerce-cart__group__item-list">
-				<li class="commerce-cart__group__item"><article
-						class="commerce-cart__delivery-group">
-						<ul class="commerce-cart__delivery-group__product-list">
-							<li class="commerce-cart__delivery-group__product-item"><article class="carted-product">
-									<div class="carted-product__select">
-										
-									</div>
-									<a style="padding-top: ;"
-										class="product-small-item product-small-item--clickable"
-										href="<%=request.getContextPath()%>/product/detail/${row.product_code}">
-										
-										<img  src="<%=request.getContextPath()%>/resources/images/${row.filename}" style="width: 70px;height: 70px;">
-										
-										<div class="product-small-item__content">
-										
-			제품명 : <h1 class="product-small-item__title" style="margin-right: 80px;margin-top: 20px;">${row.product_name}</h1>
-								      
-							</div></a>
-							
-							<!-- 개별삭제 -->
-							
-							<a href="<%=request.getContextPath()%>/cart/delete.do?cart_id=${row.cart_id}"> 
-						<button class="carted-product__delete" type="button" aria-label="삭제">
-							<svg width="12" height="12" viewBox="0 0 12 12"
-								fill="currentColor" preserveAspectRatio="xMidYMid meet">
-								<path fill-rule="nonzero"
-									d="M6 4.6L10.3.3l1.4 1.4L7.4 6l4.3 4.3-1.4 1.4L6 7.4l-4.3 4.3-1.4-1.4L4.6 6 .3 1.7 1.7.3 6 4.6z"></path></svg>
-						</button>
-						</a>
-						<ul class="carted-product__option-list">
-							<li class="carted-product__option-list__item"><article
-									class="selling-option-item">
-									
-									
-									
-									<h2 class="selling-option-item__name">
-									${row.product_name }</h2>
-										
-										
-									<div class="selling-option-item__controls">
-										<div class="selling-option-item__quantity">
-											<div
-												class="input-group select-input option-count-input">
-												<select class="form-control"><option
-														value="0">1</option>
-													<option value="1">2</option>
-													<option value="2">3</option>
-													<option value="3">4</option>
-													<option value="4">5</option>
-													<option value="5">6</option>
-													<option value="6">7</option>
-													<option value="7">8</option>
-													<option value="8">9</option>
-													<option value="9">10+</option></select><span
-													class="select-input__icon"><svg
-														class="icon" width="10" height="10"
-														preserveAspectRatio="xMidYMid meet"
-														style="fill: currentcolor;">
-														<path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path></svg></span>
+
+
+<c:forEach var="row" items="${map.list}">
+
+
+	<ul class="commerce-cart__content__group-list">
+		<li class="commerce-cart__content__group-item"><article
+				class="commerce-cart__group">
+				<h1 class="commerce-cart__group__header">제품 상세</h1>
+				<ul class="commerce-cart__group__item-list">
+					<li class="commerce-cart__group__item"><article
+							class="commerce-cart__delivery-group">
+							<ul class="commerce-cart__delivery-group__product-list">
+								<li class="commerce-cart__delivery-group__product-item"><article
+										class="carted-product">
+										<div class="carted-product__select"></div>
+										<a style="padding-top:;"
+											class="product-small-item product-small-item--clickable"
+											href="<%=request.getContextPath()%>/product/detail/${row.product_code}">
+
+											<img
+											src="<%=request.getContextPath()%>/resources/images/${row.filename}"
+											style="width: 70px; height: 70px;">
+
+											<div class="product-small-item__content">
+
+												제품명 :
+												<h1 class="product-small-item__title"
+													style="margin-right: 80px; margin-top: 20px;">${row.product_name}</h1>
+
 											</div>
-										</div>
-										<p class="selling-option-item__price">
-											<span class="selling-option-item__price__number">
-											
-											<fmt:formatNumber value="${row.money}" pattern="#,###" />
-											
-											</span>원
-										</p>
-									</div>
-								</article></li>
-						</ul>
-						
-					</li>
-										</ul>
-										
-									</article></li>
+										</a>
+
+										<!-- 개별삭제 -->
+
+										<a
+											href="<%=request.getContextPath()%>/cart/delete.do?cart_id=${row.cart_id}">
+											<button class="carted-product__delete" type="button"
+												aria-label="삭제">
+												<svg width="12" height="12" viewBox="0 0 12 12"
+													fill="currentColor"
+													preserveAspectRatio="xMidYMid meet">
+	<path fill-rule="nonzero"
+														d="M6 4.6L10.3.3l1.4 1.4L7.4 6l4.3 4.3-1.4 1.4L6 7.4l-4.3 4.3-1.4-1.4L4.6 6 .3 1.7 1.7.3 6 4.6z"></path></svg>
+											</button>
+										</a>
+										<ul class="carted-product__option-list">
+											<li class="carted-product__option-list__item"><article
+													class="selling-option-item">
+
+
+
+													<h2 class="selling-option-item__name">
+														${row.product_name }</h2>
+
+
+													<div class="selling-option-item__controls">
+														<div class="selling-option-item__quantity">
+
+															<input type="hidden" name="cart_id"
+																value="${row.cart_id}" id="cart_id"> <input
+																type="number" name="amount" value="${row.amount}"
+																style="width: 50px; height: 30px; border: none;"
+																min="1" maxlength="100" id="amount">
+															<button class="button"
+																style="width: 100px; height: 30px;" id="check">수량변경</button>
+
+
+
+														</div>
+														<p class="selling-option-item__price">
+															<span class="selling-option-item__price__number">
+
+																<fmt:formatNumber value="${row.money}"
+																	pattern="#,###" />
+
+															</span>원
+														</p>
+													</div>
+												</article></li>
+										</ul></li>
 							</ul>
+
 						</article></li>
-						</ul>
-						
-						</c:forEach>	
-						
-						
-						
-					</div>
+				</ul>
+			</article></li>
+	</ul>
+
+</c:forEach>
+
+
+
+</div>
 					
 						
 				</div>
@@ -203,7 +208,7 @@ $(function(){
 							</dl>
 							<div class="commerce-cart__side-bar__order">
 								<button
-									class="_1eWD8 _3SroY _27do9 commerce-cart__side-bar__order__btn"
+									class="_1eWD8 _3SroY _27do9 commerce-cart__side-bar__order__btn" onclick="location.href='<%=request.getContextPath()%>/cart/order.do'"
 									type="button">${map.count}개 상품 구매하기</button>
 							</div>
 						</div>
@@ -213,6 +218,6 @@ $(function(){
 		</div>
 		
 	</div>
-
+</form>
 </body>
 </html>

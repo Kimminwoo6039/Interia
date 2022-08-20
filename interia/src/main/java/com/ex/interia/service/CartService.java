@@ -9,6 +9,7 @@ import com.ex.interia.dao.CartDao;
 import com.ex.interia.dao.MemberDao;
 import com.ex.interia.vo.CartVo;
 import com.ex.interia.vo.MemberVo;
+import com.ex.interia.vo.OrderVo;
 import com.ex.interia.vo.TotalVo;
 
 @Service
@@ -61,6 +62,13 @@ public class CartService {
 
 	public void update(CartVo vo) {
         cartDao.update(vo);		
+	}
+
+
+
+
+	public void pay(OrderVo vo) {
+           cartDao.pay(vo);		
 	}
 	
 }

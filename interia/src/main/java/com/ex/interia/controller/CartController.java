@@ -3,10 +3,12 @@ package com.ex.interia.controller;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -14,10 +16,11 @@ import com.ex.interia.service.CartService;
 import com.ex.interia.service.MemberService;
 import com.ex.interia.vo.CartVo;
 import com.ex.interia.vo.MemberVo;
+import com.ex.interia.vo.OrderVo;
 import com.ex.interia.vo.TotalVo;
 
 @Controller
-@RequestMapping("/cart/**")
+@RequestMapping("/cart/*")
 public class CartController {
 
 	
@@ -41,7 +44,7 @@ public class CartController {
 		}else {
 			vo.setMemberid(memberid); //세션값을 넣어줍니다.
 			cartService.insert(vo); // insert 하기위해서 로직실행하기
-			return "redirect:cart/list.do";  //실행이 되면 리스트페이지로 가기 
+			return "redirect:/cart/list.do";  //실행이 되면 리스트페이지로 가기 
 		}
 		
 		
@@ -149,5 +152,64 @@ public class CartController {
 	}
 	
 	
+	
+	@RequestMapping("order.do")
+	public ModelAndView order(HttpSession session,ModelAndView mav,HttpServletRequest request) {
+		
+String memberid = (String) session.getAttribute("memberid"); // 아이디 가져오기
+		
+		
+		HashMap<String, Object> map = new HashMap<String, Object>(); //값을 여러가지 넣기위해서 맵생성
+		
+		if(memberid !=null) {
+			
+			List<TotalVo> list = cartService.list(memberid); // 로그인한 회원이 장바구니에 등록한 리스트 다가져오기 
+			int sumMoney = cartService.sumMoney(memberid); // 총합계
+			int fee = sumMoney >= 100000 ? 0 : 2500;   // 총합계금액이 10만원이상이면  무료배송 아니면 2500원 부가하기
+			
+			
+			
+			
+			
+			for(TotalVo vo:list) {
+				System.out.println("vo="+vo.getProduct_name());
+				map.put("product_name", vo.getProduct_name());
+				map.put("code",vo.getProduct_code());
+				map.put("cart", vo.getCart_id());
+				map.put("id", vo.getMemberid());
+			}
+			
+			
+			
+			
+			
+			
+			
+			map.put("sumMoney", sumMoney); // 로그인한 회원 모든 합계급액
+			map.put("fee", fee); //배송료
+			map.put("list", list); // 한사람이 구매한 목록
+			map.put("count", list.size()); //장바구니에 들어있는 총 수량
+			mav.setViewName("cart/cart_order"); // 리스트페이지로 이동
+			map.put("total", sumMoney+fee);
+			mav.addObject("map", map); // 맵 에다가 담아서 가져가기위함.
+			return mav;
+			
+			
+			
+			
+			
+			
+		
+	}else {
+		return new ModelAndView("login/login");
+	}
+	
+	
+	}	
+	
+	
+	
+
+	 
 	
 }

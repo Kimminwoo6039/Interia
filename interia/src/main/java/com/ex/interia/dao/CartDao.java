@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.ex.interia.vo.CartVo;
 import com.ex.interia.vo.MemberVo;
+import com.ex.interia.vo.OrderVo;
 import com.ex.interia.vo.TotalVo;
 
 @Repository
@@ -57,6 +58,12 @@ public class CartDao {
 
 	public void update(CartVo vo) {
         sqlSession.update(Mapper+".update", vo);		
+	}
+
+
+
+	public void pay(OrderVo vo) {
+         sqlSession.insert(Mapper+".pay", vo);		
 	}
 	
 	
