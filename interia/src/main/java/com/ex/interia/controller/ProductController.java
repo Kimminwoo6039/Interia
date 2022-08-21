@@ -39,20 +39,20 @@ public class ProductController {
 	}
 	
 	
-	@RequestMapping("writeAction.do") //상품등록
+	@RequestMapping("writeAction.do") //�긽�뭹�벑濡�
 	public String writeAction(ProductVo vo,HttpServletRequest request)throws Exception {
 		
 		
-		String filename = "-"; //파일이름이 없으면 - 로 고정시키기
-		if(!vo.getFile1().isEmpty()) { //값이 null 이 아닐때
-			filename = vo.getFile1().getOriginalFilename(); // 파일이름은 내가 지정한 원본이름으로 지정
+		String filename = "-"; //�뙆�씪�씠由꾩씠 �뾾�쑝硫� - 濡� 怨좎젙�떆�궎湲�
+		if(!vo.getFile1().isEmpty()) { //媛믪씠 null �씠 �븘�땺�븣
+			filename = vo.getFile1().getOriginalFilename(); // �뙆�씪�씠由꾩� �궡媛� 吏��젙�븳 �썝蹂몄씠由꾩쑝濡� 吏��젙
 			
 			
 			try {
-				ServletContext context = request.getSession().getServletContext(); //서블릿컨테이너와 통신
-				String path = context.getRealPath("/resources/images/"); // 서버안에있는 실제 경로주소
+				ServletContext context = request.getSession().getServletContext(); //�꽌釉붾┸而⑦뀒�씠�꼫�� �넻�떊
+				String path = context.getRealPath("/resources/images/"); // �꽌踰꾩븞�뿉�엳�뒗 �떎�젣 寃쎈줈二쇱냼
 				
-				new File(path).mkdir(); //디렉토리 생성  상위디렉토리 없으면 생성불기
+				new File(path).mkdir(); //�뵒�젆�넗由� �깮�꽦  �긽�쐞�뵒�젆�넗由� �뾾�쑝硫� �깮�꽦遺덇린
 				vo.getFile1().transferTo(new File(path+filename));
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -60,7 +60,7 @@ public class ProductController {
 			
 			
 		}
-		System.out.println("여기");
+		System.out.println("�뿬湲�");
 		vo.setFilename(filename);
 		productService.writeAction(vo);
 		return "redirect:/product/list.do";
@@ -71,17 +71,17 @@ public class ProductController {
 	@RequestMapping("list.do")
 	public ModelAndView list(ModelAndView mav,HttpSession session,Criteria cri) throws Exception{
 		
-		int productCnt = productService.cnt(cri); // 상품 게시물 
+		int productCnt = productService.cnt(cri); // �긽�뭹 寃뚯떆臾� 
 		
 		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCri(cri); //검색내용과 페이지 넣기
-		pageMaker.setTotalcount(productCnt); // 상품 전체개수 넣기
+		pageMaker.setCri(cri); //寃��깋�궡�슜怨� �럹�씠吏� �꽔湲�
+		pageMaker.setTotalcount(productCnt); // �긽�뭹 �쟾泥닿컻�닔 �꽔湲�
 		
 		
-		List<ProductVo> list = productService.list(cri); // 상품 리스트 뽑기
-		mav.addObject("list", list); // 리스트
-		mav.addObject("pageMaker", pageMaker); //페이징내용
-		mav.setViewName("product/list"); // 페이지이동
+		List<ProductVo> list = productService.list(cri); // �긽�뭹 由ъ뒪�듃 戮묎린
+		mav.addObject("list", list); // 由ъ뒪�듃
+		mav.addObject("pageMaker", pageMaker); //�럹�씠吏뺣궡�슜
+		mav.setViewName("product/list"); // �럹�씠吏��씠�룞
 		return mav;
 		
 	}
@@ -105,10 +105,10 @@ public class ProductController {
 			filename = vo.getFile1().getOriginalFilename();
 			
 			try {
-			 ServletContext servletContext = request.getSession().getServletContext(); //서버연결
+			 ServletContext servletContext = request.getSession().getServletContext(); //�꽌踰꾩뿰寃�
 			 String path = servletContext.getRealPath("/resources/images/");
 			 
-			 new File(path).mkdir(); //디렉토리 생성
+			 new File(path).mkdir(); //�뵒�젆�넗由� �깮�꽦
 			 vo.getFile1().transferTo(new File(path+filename));
 			} catch (Exception e) {
                 e.printStackTrace();
@@ -150,5 +150,23 @@ public class ProductController {
 		return mav;
 	}
 	
+	
+	@RequestMapping("best.do")
+	public ModelAndView best(ModelAndView mav,HttpSession session,Criteria cri) throws Exception{
+		
+		int productCnt = productService.cnt(cri); // �긽�뭹 寃뚯떆臾� 
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri); //寃��깋�궡�슜怨� �럹�씠吏� �꽔湲�
+		pageMaker.setTotalcount(productCnt); // �긽�뭹 �쟾泥닿컻�닔 �꽔湲�
+		
+		
+		List<ProductVo> list = productService.list(cri); // �긽�뭹 由ъ뒪�듃 戮묎린
+		mav.addObject("list", list); // 由ъ뒪�듃
+		mav.addObject("pageMaker", pageMaker); //�럹�씠吏뺣궡�슜
+		mav.setViewName("product/best"); // �럹�씠吏��씠�룞
+		return mav;
+		
+	}
 	
 }

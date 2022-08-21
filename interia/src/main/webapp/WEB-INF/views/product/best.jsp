@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
@@ -35,13 +35,13 @@
 							aria-current="page" href="<%=request.getContextPath()%>/"
 							style="font-family: 'Noto Sans KR', sans-serif; font-size: 18px; color: #2F3438;">스토어홈</a>
 						</li>
-						<li class="nav-item"><a class="nav-link active" aria-current="page"
-							href="<%=request.getContextPath()%>/product/list.do"
-							style="font-family: 'Noto Sans KR', sans-serif; font-size: 18px; color: #91d3ff;">전체상품</a>
-						</li>
 						<li class="nav-item"><a class="nav-link" aria-current="page"
+							href="<%=request.getContextPath()%>/product/list.do"
+							style="font-family: 'Noto Sans KR', sans-serif; font-size: 18px; color: #2F3438;">전체상품</a>
+						</li>
+						<li class="nav-item"><a class="nav-link active" aria-current="page"
 							href="<%=request.getContextPath()%>/product/best.do"
-							style="font-family: 'Noto Sans KR', sans-serif; font-size: 18px; color: #2F3438;">베스트</a>
+							style="font-family: 'Noto Sans KR', sans-serif; font-size: 18px; color: #91d3ff;;">베스트</a>
 						</li>
 						<li class="nav-item"><a class="nav-link" aria-current="page"
 							href="#"
@@ -83,86 +83,7 @@
 <!-- 네비게이션끝 -->
 
 
-<!-- 리스트 -->
 
-<section id="sidebar">
-<h1 style="float: left;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;margin-left: 80px;color: #ff7777">판매상품</h1><br><br>
-		<div style="display: flex;text-decoration: none;">
-		
-			<ul style="padding-left: 100px;text-decoration: none;">
-				<li style="margin-top: 10px;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;color: black;"><a href="<%=request.getContextPath()%>/product/list.do?product_brand=가구" style="color: #000;">가구</a></li>
-				<li style="margin-top: 10px;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;"><a
-					href="<%=request.getContextPath()%>/product/list.do?brand=가전제품" style="color: #000;">가전제품
-						</a></li>
-				<li style="margin-top: 10px;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;"> <a
-					href="<%=request.getContextPath()%>/product/list.do?brand=조명" style="color: #000;">조명</a></li>
-				<li style="margin-top: 10px;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;"><a
-					href="<%=request.getContextPath()%>/product/list.do?brand=캠핑용품" style="color: #000;">
-						캠핌용품</a></li>
-				<li style="margin-top: 10px;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;"><a
-					href="<%=request.getContextPath()%>/product/list.do?brand=생필용품" style="color: #000;">
-						생필용품</a></li>
-				<li style="margin-top: 10px;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;"><a
-					href="<%=request.getContextPath()%>/product/list.do?brand=주방용품" style="color: #000;">주방용품</a></li>
-					<li style="margin-top: 10px;font-family: 'Noto Sans KR', sans-serif;font-size: 20px;"><a
-					href="<%=request.getContextPath()%>/product/list.do?brand=실내용품" style="color: #000;">실내용품</a></li>
-			</ul>
-			
-			<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="width: 1150px;height: 100px;margin-left: 190px;">
-  
-  
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="<%=request.getContextPath()%>/resources/image/6.png" class="d-block w-100">
-    </div>
-     <div class="carousel-item">
-      <img src="<%=request.getContextPath()%>/resources/image/1.webp" class="d-block w-100" >
-    </div>
-    <div class="carousel-item">
-      <img src="<%=request.getContextPath()%>/resources/image/2.webp" class="d-block w-100" >
-    </div>
-    <div class="carousel-item">
-      <img src="<%=request.getContextPath()%>/resources/image/3.webp" class="d-block w-100" >
-    </div>
-    <div class="carousel-item">
-      <img src="<%=request.getContextPath()%>/resources/image/4.webp" class="d-block w-100" >
-    </div>
-     <div class="carousel-item">
-      <img src="<%=request.getContextPath()%>/resources/image/5.png" class="d-block w-100" >
-    </div>
-  </div>
-  
-   
-  
-  
-  
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-
-  
-</div>
-
-
-		</div>
-		
-<c:if test="${session.Scope.memberid == null }">
-
-<a href="<%=request.getContextPath()%>/product/write.do" style="float:inherit;margin-left: 350px;">
-<button type="button" class="btn btn-sm bg-dark text-white">
-상품등록
-</button>
-</a>
-
-</c:if>
-	</section>
-	
-	
 	<!-- 아이템 -->
 	
 	<div class="row" style="width: 1250px;margin: auto;margin-bottom: 200px;">
@@ -212,6 +133,16 @@
 			
 			
 </div>
+
+
+
+
+
+
+
+
+
+
 
 
 </body>

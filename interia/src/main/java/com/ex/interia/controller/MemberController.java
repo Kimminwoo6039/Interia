@@ -106,17 +106,7 @@ public class MemberController {
 	}
 	
 	
-	@RequestMapping("pay")
-	public String pay(OrderVo vo,HttpServletRequest request) {
-		
-		System.out.println("들어옴");
-		cartService.pay(vo);
-		
-		request.setAttribute("name", vo.getOrder_product());
-		request.setAttribute("sum", vo.getOrder_sum());
-		
-		return "cart/pay";
-	}
+	
 	
 	
 	

@@ -168,7 +168,7 @@ $(function(){
 
 </c:forEach>
 
-
+</form>
 
 </div>
 					
@@ -218,6 +218,6 @@ $(function(){
 		</div>
 		
 	</div>
-</form>
+
 </body>
 </html>

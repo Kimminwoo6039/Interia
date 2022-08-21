@@ -84,6 +84,25 @@ background-color: #fafafa;
 </script>
 
 
+<script type="text/javascript">
+
+
+function check(){
+	alert('gg')
+	
+	var fm = document.form1;
+	
+	
+	
+	fm.action ="<%=request.getContextPath()%>/order/update.do";
+	fm.method="post";
+	fm.submit();
+	
+	
+}
+
+
+</script>
 
 
 <meta charset="UTF-8">
@@ -93,13 +112,7 @@ background-color: #fafafa;
 <%@ include file="../menu/include.jsp"%>
 
 
-<form action="<%=request.getContextPath()%>/member/pay" method="post">
 
- <input type="hidden" name="order_product" value="${map.product_name}">  
-<input type="hidden" name="order_sum"" value="${map.total}">
-<input type="hidden" name="order_cart" value="${map.cart}">
-<input type="hidden" name="order_id" value="${map.id}">
-<input type="hidden" name="order_code" value="${map.code}">
 
 <div class="commerce-cart-wrap1">
 	<div class="container">
@@ -136,6 +149,18 @@ background-color: #fafafa;
 					<input type="text" placeholder="휴대전화를 입력해주세요" class="_1eWD8 _3SroY _27do8 commerce-cart__side-bar__order__btn" style="width: 270px;min-height:40px;background: rgb(255, 255, 255);color: black;font-size: 14px;font-weight: normal;border-color: rgb(219, 219, 219);margin-top: 8px;">	
 			
 			
+			
+			
+			<form action="<%=request.getContextPath()%>/order/update.do"	method="post" name="form1">
+
+ <input type="hidden" name="order_product" value="${map.product_name}">  
+<input type="hidden" name="order_sum" value="${map.total}">
+<input type="hidden" name="order_cart" value="${map.cart}">
+<input type="hidden" name="order_id" value="${map.id}">
+<input type="hidden" name="order_code" value="${map.code}">
+
+			
+			
 			<!-- 배송지-->
 			      <h4 class="fw-bold" style="margin-top: 10px;opacity: 0.8;margin-top: 100px;">배송지</h4>
 			     <hr>	
@@ -160,7 +185,7 @@ background-color: #fafafa;
 			     <input type="text"  class="_1eWD8 _3SroY _27do8 commerce-cart__side-bar__order__btn" style="margin-left:75px;width: 570px;min-height:40px;background: #fafafa;color: black;font-size: 14px;font-weight: normal;border-color: rgb(219, 219, 219);margin-top: 8px;" name="order_addr2" id="sample6_address">	
 				<input type="text" class="_1eWD8 _3SroY _27do8 commerce-cart__side-bar__order__btn" style="margin-left:75px;width: 570px;min-height:40px;background: #fafafa;color: black;font-size: 14px;font-weight: normal;border-color: rgb(219, 219, 219);margin-top: 8px;" name="order_addr3"	id="sample6_detailAddress">	
 				
-				
+				 
 				
 				<!-- 배송지-->
 			      <h4 class="fw-bold" style="margin-top: 10px;opacity: 0.8;margin-top: 100px;">주문상품</h4>
@@ -288,7 +313,8 @@ background-color: #fafafa;
 
 							</dl>
 							<div class="commerce-cart__side-bar__order">
-								<button class="_1eWD8 _3SroY _27do9 commerce-cart__side-bar__order__btn" >${map.count}개 상품 결제하기</button>
+								<button class="_1eWD8 _3SroY _27do9 commerce-cart__side-bar__order__btn" type="button" onclick="check()">${map.count}개 상품 결제하기</button>
+								
 							</div>
 							
 						
@@ -300,7 +326,6 @@ background-color: #fafafa;
 		</div>
 		
 	</div>
-
-  </form>  
+ </form>
 </body>
 </html>
