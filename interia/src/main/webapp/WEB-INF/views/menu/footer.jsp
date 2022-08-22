@@ -232,7 +232,7 @@
 <div>
  <div id="container" style="align-items: center;">
         <div id="part1" style="margin-top: 120px;align-items: center;">
-            <div class="container" style="margin-left: 120px;margin-top: 120px;">
+            <div class="container" style="margin-left: 300px;margin-top: 120px;">
                 <a id="sitelink" href="#" style="font-size: 12px;color: #2f3448;font-weight: 700;margin-top: 120px;">고객센터 ></a>
                 <p id="title" style="font-size: 24px;color: #2F3438;font-weight: 1000">1577-1577</p>
                 <p id="detail" style="color: #2F3438">09:00~18:00 (주말, 공휴일은 오늘의인테리어 배송 문의에 한해 전화 상담 가능)</p>
@@ -246,8 +246,8 @@
           
         </div>
         <div id="part2" >
-           <p style="font-size: 11px;font-weight: 400;color: #828C94;margin-left: 130px;margin-top: 10px;">ISMS 정보보호 관리체계 인증</p>
-               <p style="font-size: 11px;font-weight: 400;color: #828C94;margin-left: 130px;">2021. 09. 08 ~ 2024. 09. 07</p>
+           <p style="font-size: 11px;font-weight: 400;color: #828C94;margin-left: 310px;margin-top: 10px;">ISMS 정보보호 관리체계 인증</p>
+               <p style="font-size: 11px;font-weight: 400;color: #828C94;margin-left: 310px;">2021. 09. 08 ~ 2024. 09. 07</p>
         </div>
     </div>
 </div>
