@@ -111,7 +111,7 @@
 					</span>
 					
 					<!-- 상품수정하는 페이지 -->
-					<c:if test="${session.Scope.memberid ==null}">
+					<c:if test="${sessionScope.memberid !=null}">
 					
 					<a href="<%=request.getContextPath()%>/product/edit/${row.product_code}">
 					

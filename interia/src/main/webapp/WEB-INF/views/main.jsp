@@ -28,8 +28,12 @@
 
 
 
+
+
+
 </head>
 <body style="background: #fff">
+
 
 
 <%@ include file="menu/include.jsp"%>
@@ -210,11 +214,11 @@
 			
 					<a href="<%=request.getContextPath()%>/product/detail/${row.product_code}"><img
 						src="<%=request.getContextPath()%>/resources/images/${row.filename}"
-						alt="" style="width: 250px;height: 250px;margin-top: 12px;"></a>
+						alt="" style="width: 272px;height: 272px;margin-top: 12px;"></a>
 					<ul style="justify-content: center;">
 					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">${row.product_brand}</span>
 					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">${row.product_name}</span><br>
-					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">
+					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;font-weight: 700;line-height: 23px;color: #424242">
 					<fmt:formatNumber value="${row.product_price}" pattern="#,###" />&nbsp;원 
 					</span>
 					</ul>		
@@ -321,10 +325,10 @@
 <!-- ㅇㅇㅇ -->
 
 <A  style="font-family: 'Noto Sans KR', sans-serif;margin-left: 400px;margin-top: 140px;font-size: 24px;">인기상품</A><a href="<%=request.getContextPath() %>/product/best.do" style="font-family: 'Noto Sans KR', sans-serif;margin-left: 1050px;margin-top: 140px;color: #ff7777" >더보기</a>
-<div class="container" style="display: flex;align-items: center;height:200px;width: 1200px;height: 400px;padding-bottom: 120px;margin-top: px;margin-bottom: 60px;">
+<div class="container" style="display: flex;align-items: center;height:1700px;width: 1200px;padding-bottom: 120px;margin-top: 100px;margin-bottom: 60px;">
 
-<Div class="row" style="margin-top: 500px;">
 
+<div class="row" style="margin-top: 0px;">
 
 <c:forEach var="row" items="${list1}">
 
@@ -334,11 +338,11 @@
 			
 					<a href="<%=request.getContextPath()%>/product/detail/${row.product_code}"><img
 						src="<%=request.getContextPath()%>/resources/images/${row.filename}"
-						alt="" style="width: 250px;height: 250px;margin-top: 12px;"></a> 
+						alt="" style="width: 272px;height: 272px;margin-top: 12px;"></a>
 					<ul style="justify-content: center;">
 					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">${row.product_brand}</span>
 					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">${row.product_name}</span><br>
-					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">
+					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;font-weight: 700;line-height: 23px;color: #424242">
 					<fmt:formatNumber value="${row.product_price}" pattern="#,###" />&nbsp;원 
 					</span>
 					</ul>		
@@ -352,16 +356,15 @@
 			
 </c:forEach>				
 
-
+</div>
 
 
 </div>
 
 
-	
 
+ <%-- <%@ include file="menu/footer.jsp"%>  --%>
 
-	</div>
 
 
 

@@ -151,7 +151,7 @@
 
 		</div>
 		
-<c:if test="${session.Scope.memberid == null }">
+<c:if test="${sessionScope.memberid != null }">
 
 <a href="<%=request.getContextPath()%>/product/write.do" style="float:inherit;margin-left: 350px;">
 <button type="button" class="btn btn-sm bg-dark text-white">
@@ -190,7 +190,7 @@
 					</span>
 					
 					<!-- 상품수정하는 페이지 -->
-					<c:if test="${session.Scope.memberid ==null}">
+					<c:if test="${sessionScope.memberid !=null}">
 					
 					<a href="<%=request.getContextPath()%>/product/edit/${row.product_code}">
 					
