@@ -116,7 +116,7 @@ select * from teamproduct where product_code = #{product_code}
 <select id="list4" resultType="com.ex.interia.vo.ProductVo">
 
 
-select * from teamproduct where product_best='today' order by product_best desc limit 0,3 ;
+select * from teamproduct where product_best='today' order by product_best desc limit 0,4 ;
 
 
 </select>
@@ -129,5 +129,20 @@ select * from teamproduct where product_best='best' order by product_best desc l
 
 </select>
 
+<!-- 오늘의상품 -->
+
+<select id="today" resultType="com.ex.interia.vo.ProductVo">
+
+select * from teamproduct where product_best='today' order by product_best desc
+
+</select>
+
+<!-- 베스트 상품 -->
+
+<select id="best" resultType="com.ex.interia.vo.ProductVo">
+
+select * from teamproduct where product_best='best' order by product_best desc
+
+</select>
 </mapper>
 

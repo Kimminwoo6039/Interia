@@ -44,7 +44,7 @@
 							style="font-family: 'Noto Sans KR', sans-serif; font-size: 18px; color: #91d3ff;;">베스트</a>
 						</li>
 						<li class="nav-item"><a class="nav-link" aria-current="page"
-							href="#"
+							href="<%=request.getContextPath() %>/product/today.do"
 							style="font-family: 'Noto Sans KR', sans-serif; font-size: 18px; color: #2F3438;">오늘의상품</a>
 						</li>
 					<!-- 	<li class="nav-item"><a class="nav-link" aria-current="page"

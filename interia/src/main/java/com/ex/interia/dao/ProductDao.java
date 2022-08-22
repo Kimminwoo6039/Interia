@@ -73,5 +73,15 @@ public class ProductDao {
 	public List<ProductVo> list16() {
 		return sqlSession.selectList(Mapper+".list16");
 	}
+
+
+	public List<ProductVo> today() {
+		return sqlSession.selectList(Mapper+".today");
+	}
+
+
+	public List<ProductVo> best() {
+		return sqlSession.selectList(Mapper+".best");
+	}
 	
 }

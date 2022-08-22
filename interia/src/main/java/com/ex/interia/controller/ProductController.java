@@ -161,11 +161,32 @@ public class ProductController {
 		pageMaker.setTotalcount(productCnt); // �긽�뭹 �쟾泥닿컻�닔 �꽔湲�
 		
 		
-		List<ProductVo> list = productService.list(cri); // �긽�뭹 由ъ뒪�듃 戮묎린
+		List<ProductVo> list = productService.best(); // �긽�뭹 由ъ뒪�듃 戮묎린
 		mav.addObject("list", list); // 由ъ뒪�듃
 		mav.addObject("pageMaker", pageMaker); //�럹�씠吏뺣궡�슜
 		mav.setViewName("product/best"); // �럹�씠吏��씠�룞
 		return mav;
+		
+	}
+	
+	
+	@RequestMapping("today.do")
+	public ModelAndView today(ModelAndView mav,HttpSession session,Criteria cri) throws Exception {
+		
+       int productCnt = productService.cnt(cri); 
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri); 
+		pageMaker.setTotalcount(productCnt); 
+		
+		
+		List<ProductVo> list = productService.today(); 
+		mav.addObject("list", list);
+		mav.addObject("pageMaker", pageMaker); 
+		mav.setViewName("product/today"); 
+		return mav;
+		
+		
 		
 	}
 	

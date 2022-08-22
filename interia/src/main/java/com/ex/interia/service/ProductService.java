@@ -72,6 +72,16 @@ public class ProductService {
 	public List<ProductVo> list16() {
 		return productDao.list16();
 	}
+
+
+	public List<ProductVo> today() {
+		return productDao.today();
+	}
+
+
+	public List<ProductVo> best() {
+		return productDao.best();
+	}
 	
 	
 	

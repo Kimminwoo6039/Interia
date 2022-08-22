@@ -52,7 +52,7 @@
            <a class="nav-link" aria-current="page" href="<%=request.getContextPath()%>/product/best.do" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color: #2F3438;">베스트</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color: #2F3438; ">오늘의상품</a>
+          <a class="nav-link" aria-current="page" href="<%=request.getContextPath() %>/product/today.do" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color: #2F3438; ">오늘의상품</a>
         </li>
    <!--      <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color: #2F3438; ">시즌세일</a> 
@@ -197,7 +197,7 @@
 <br>
 <Br>
 <!-- ddd -->
-<A style="font-family: 'Noto Sans KR', sans-serif;margin-left: 400px;margin-top: 120px;font-size: 24px;">오늘의상품</A><a style="font-family: 'Noto Sans KR', sans-serif;margin-left: 950px;margin-top: 120px;color: #ff7777" href="#" >더보기</a>
+<A style="font-family: 'Noto Sans KR', sans-serif;margin-left: 400px;margin-top: 120px;font-size: 24px;">오늘의상품</A><a style="font-family: 'Noto Sans KR', sans-serif;margin-left: 1050px;margin-top: 120px;color: #ff7777" href="#" >더보기</a>
 <div class="container" style="display: flex;align-items: center;height:3000px;width: 1200px;height: 400px;padding-bottom: 120px;margin-top: px;">
 
 
@@ -320,7 +320,7 @@
 </div>
 <!-- ㅇㅇㅇ -->
 
-<A style="font-family: 'Noto Sans KR', sans-serif;margin-left: 400px;margin-top: 140px;font-size: 24px;">인기상품</A><a style="font-family: 'Noto Sans KR', sans-serif;margin-left: 950px;margin-top: 140px;" href="#">더보기</a>
+<A  style="font-family: 'Noto Sans KR', sans-serif;margin-left: 400px;margin-top: 140px;font-size: 24px;">인기상품</A><a href="<%=request.getContextPath() %>/product/best.do" style="font-family: 'Noto Sans KR', sans-serif;margin-left: 1050px;margin-top: 140px;color: #ff7777" >더보기</a>
 <div class="container" style="display: flex;align-items: center;height:200px;width: 1200px;height: 400px;padding-bottom: 120px;margin-top: px;margin-bottom: 60px;">
 
 <Div class="row" style="margin-top: 500px;">
@@ -333,7 +333,7 @@
 				<div class="product">
 			
 					<a href="<%=request.getContextPath()%>/product/detail/${row.product_code}"><img
-						src="<%=request.getContextPath()%>/resources/images/${row.filname}"
+						src="<%=request.getContextPath()%>/resources/images/${row.filename}"
 						alt="" style="width: 250px;height: 250px;margin-top: 12px;"></a> 
 					<ul style="justify-content: center;">
 					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">${row.product_brand}</span>
