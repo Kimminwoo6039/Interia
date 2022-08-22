@@ -138,6 +138,9 @@
 
 
 
+<%@ include file="../menu/footer.jsp"%>
+
+
 
 </body>
 </html>

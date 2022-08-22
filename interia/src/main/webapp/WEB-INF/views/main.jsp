@@ -362,10 +362,7 @@
 </div>
 
 
-
- <%-- <%@ include file="menu/footer.jsp"%>  --%>
-
-
+<%@ include file="menu/footer.jsp"%>
 
 
 
