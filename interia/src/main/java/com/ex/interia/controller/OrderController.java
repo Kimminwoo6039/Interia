@@ -28,10 +28,17 @@ public class OrderController {
 	}
 	
 	@RequestMapping("update.do")
-	public String pay(OrderVo vo,HttpServletRequest request) {
+	public String pay(OrderVo vo,HttpServletRequest request) throws Exception {
 		
-		System.out.println("들어옴");
-		 orderService.pay(vo); 
+		
+		try {
+			 orderService.pay(vo); 
+		} catch (Exception e) {
+              e.printStackTrace();
+              return "cart/cart_order";
+		}
+		
+		
 		
 		request.setAttribute("name", vo.getOrder_product());
 		request.setAttribute("sum", vo.getOrder_sum());

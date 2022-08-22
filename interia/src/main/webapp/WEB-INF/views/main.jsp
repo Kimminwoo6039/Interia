@@ -201,70 +201,32 @@
 <div class="container" style="display: flex;align-items: center;height:3000px;width: 1200px;height: 400px;padding-bottom: 120px;margin-top: px;">
 
 
+	<c:forEach var="row" items="${list}">
+
 
 			<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
 			
 				<div class="product" style="margin-top: 100px;">
 			
-					<img
-						src="<%=request.getContextPath()%>/resources/image1/5555.jpg"
-						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
+					<a href="<%=request.getContextPath()%>/product/detail/${row.product_code}"><img
+						src="<%=request.getContextPath()%>/resources/images/${row.filename}"
+						alt="" style="width: 250px;height: 250px;margin-top: 12px;"></a>
 					<ul style="justify-content: center;">
-					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
-					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
-					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
+					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">${row.product_brand}</span>
+					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">${row.product_name}</span><br>
+					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">
+					<fmt:formatNumber value="${row.product_price}" pattern="#,###" />&nbsp;원 
+					</span>
 					</ul>		
 				</div>
 	
 			</div>
 			
-				<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
-			
-				<div class="product" style="margin-top: 100px;">
 				
-					<img
-						src="<%=request.getContextPath()%>/resources/image1/7777.png"
-						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
-					<ul style="justify-content: center;">
-					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
-					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
-					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
-					</ul>		
-				</div>
-	
-			</div>
 
-	<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+	 </c:forEach>
 			
-				<div class="product" style="margin-top: 100px;">
-				
-					<img
-						src="<%=request.getContextPath()%>/resources/image1/00.jpg"
-						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
-					<ul style="justify-content: center;">
-					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
-					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
-					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
-					</ul>		
-				</div>
-	
-			</div>
 			
-				<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
-			
-				<div class="product" style="margin-top: 100px;">
-				
-					<img
-						src="<%=request.getContextPath()%>/resources/image1/33.jpg"
-						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
-					<ul style="justify-content: center;">
-					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
-					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
-					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
-					</ul>		
-				</div>
-	
-			</div>
 
 <!-- 카테고리 -->
 		
@@ -364,135 +326,31 @@
 <Div class="row" style="margin-top: 500px;">
 
 
-
-
-<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
-			
-				<div class="product">
-			
-					<img
-						src="<%=request.getContextPath()%>/resources/image1/5555.jpg"
-						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
-					<ul style="justify-content: center;">
-					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
-					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
-					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
-					</ul>		
-				</div>
-	
-			</div>
-			
-				<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
-			
-				<div class="product">
-				
-					<img
-						src="<%=request.getContextPath()%>/resources/image1/7777.png"
-						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
-					<ul style="justify-content: center;">
-					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
-					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
-					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
-					</ul>		
-				</div>
-	
-			</div>
-
-	<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
-			
-				<div class="product">
-				
-					<img
-						src="<%=request.getContextPath()%>/resources/image1/00.jpg"
-						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
-					<ul style="justify-content: center;">
-					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
-					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
-					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
-					</ul>		
-				</div>
-	
-			</div>
-			
-				<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
-			
-				<div class="product">
-				
-					<img
-						src="<%=request.getContextPath()%>/resources/image1/33.jpg"
-						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
-					<ul style="justify-content: center;">
-					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
-					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
-					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
-					</ul>		
-				</div>
-	
-			</div>
+<c:forEach var="row" items="${list1}">
 
 <div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
 			
 				<div class="product">
 			
-					<img
-						src="<%=request.getContextPath()%>/resources/image1/5555.jpg"
-						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
+					<a href="<%=request.getContextPath()%>/product/detail/${row.product_code}"><img
+						src="<%=request.getContextPath()%>/resources/images/${row.filname}"
+						alt="" style="width: 250px;height: 250px;margin-top: 12px;"></a> 
 					<ul style="justify-content: center;">
-					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
-					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
-					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
+					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">${row.product_brand}</span>
+					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">${row.product_name}</span><br>
+					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">
+					<fmt:formatNumber value="${row.product_price}" pattern="#,###" />&nbsp;원 
+					</span>
 					</ul>		
 				</div>
 	
 			</div>
 			
-				<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
-			
-				<div class="product">
 				
-					<img
-						src="<%=request.getContextPath()%>/resources/image1/7777.png"
-						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
-					<ul style="justify-content: center;">
-					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
-					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
-					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
-					</ul>		
-				</div>
-	
-			</div>
 
-	<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
-			
-				<div class="product">
-				
-					<img
-						src="<%=request.getContextPath()%>/resources/image1/00.jpg"
-						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
-					<ul style="justify-content: center;">
-					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
-					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
-					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
-					</ul>		
-				</div>
 	
-			</div>
 			
-				<div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
-			
-				<div class="product">
-				
-					<img
-						src="<%=request.getContextPath()%>/resources/image1/33.jpg"
-						alt="" style="width: 250px;height: 250px;margin-top: 12px;">
-					<ul style="justify-content: center;">
-					<span class="title" style="margin-right: 40px;display: block;font-size: 11px;color: #828c94;">Winter Sweater</span>
-					<span class="price" style="padding-bottom: 10px;font-size: 13px;color: #424242;">상품명을 입력해주세요</span><br>
-					<span style="font-size: 17px;font-family: 'Noto Sans KR', sans-serif;margin-left: 60px;">22,000</span>
-					</ul>		
-				</div>
-	
-			</div>
+</c:forEach>				
 
 
 

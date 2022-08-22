@@ -6,7 +6,7 @@
 
 <insert id="writeAction">
 
-insert into teamproduct(product_name,product_amount,product_price,product_brand,filename) values(#{product_name},#{product_amount},#{product_price},#{product_brand},#{filename})
+insert into teamproduct(product_name,product_amount,product_price,product_brand,filename,product_best) values(#{product_name},#{product_amount},#{product_price},#{product_brand},#{filename},#{product_best})
 
 </insert>
 
@@ -82,7 +82,7 @@ select * from teamproduct where product_code = #{product_code}
 
 <update id="update">
 
-update teamproduct set product_name = #{product_name},product_amount=#{product_amount},product_price=#{product_price},product_brand=#{product_brand},filename=#{filename} where product_code = #{product_code}
+update teamproduct set product_name = #{product_name},product_amount=#{product_amount},product_price=#{product_price},product_brand=#{product_brand},filename=#{filename},product_best=#{product_best} where product_code = #{product_code}
 
 </update>
 
@@ -110,5 +110,24 @@ delete from teamproduct where product_code = #{product_code}
 select * from teamproduct where product_code = #{product_code}
 
 </select>
+
+<!-- 홈페이지 4개  -->
+
+<select id="list4" resultType="com.ex.interia.vo.ProductVo">
+
+
+select * from teamproduct where product_best='today' order by product_best desc limit 0,3 ;
+
+
+</select>
+
+<!-- 홈페이지 16개 -->
+
+<select id="list16" resultType="com.ex.interia.vo.ProductVo">
+
+select * from teamproduct where product_best='best' order by product_best desc limit 0,15 ;
+
+</select>
+
 </mapper>
 

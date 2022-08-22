@@ -28,10 +28,6 @@ function check(){
 		alert("가격을 입력해주세요");
 		fm.product_price.focus();
 		return;
-	}else if(fm.product_brand.value==""){
-		alert("브랜드를 입력해주세요");
-		fm.product_brand.focus();
-		return;
 	}
 	
 	fm.action="<%=request.getContextPath()%>/product/writeAction.do";
@@ -49,22 +45,22 @@ function check(){
 <body>
 <form name="form1" method="post">
 
-<div class="login-form" style="margin-top: 150px;">
+<div class="login-form" style="margin-top: 100px;width: 600px;">
      <h2 style="color: #35c5f0;text-align:center;">상품등록</h2>
 
 			<div class="form-group ">
 				<label>상품명</label> 
-				<input type="text" class="form-control"placeholder="아이디 " name="product_name">
+				<input type="text" class="form-control"placeholder="상품명 " name="product_name">
 			</div>
 
 			<div class="form-group log-status">
 				<label>상품수량</label> 
-				<input type="password" class="form-control"placeholder="비밀번호" name="product_amount">
+				<input type="text" class="form-control"placeholder="상품수량" name="product_amount">
 			</div>
 
 			<div class="form-group log-status">
 				<label>상품가격</label>
-				 <input type="text" class="form-control"placeholder="이름" name="product_price"> 
+				 <input type="text" class="form-control"placeholder="상품가격" name="product_price"> 
 			</div>
 			
 			<div class="form-group log-status">
@@ -79,6 +75,16 @@ function check(){
 						<option value="생필용품">생필용품</option>
 						<option value="주방용품">주방용품</option>
 						<option value="실내용품">실내용품</option>
+					</select>
+				</div>
+				
+				<div class="input-group mb-3" style="margin-top: 8px;">
+				  <label>선호도</label>
+					<select class="form-select bg-light form-control" name="product_best">
+						<option value="normal">일반 상품</option>
+						<option value="today">오늘의 상품</option>
+						<option value="best">베스트 상품</option>
+						
 					</select>
 				</div>
              

@@ -88,9 +88,45 @@ background-color: #fafafa;
 
 
 function check(){
-	alert('gg')
 	
 	var fm = document.form1;
+	
+	if(fm.va.value==""){
+		alert('배송지를 입력해주세요');
+		fm.va.focus();
+		return;
+	}else if(fm.order_name.value==""){
+		alert('받는분을 입력해주세요');
+		fm.order_name.focus();
+		return;
+	}else if(fm.order_phone.value==""){
+		alert('번호를 입력해주세요');
+		fm.order_phone.focus();
+		return;
+	}else if(fm.order_addr1.value==""){
+		alert('우편번호를 입력해주세요');
+		fm.order_addr1.focus();
+		return;
+	}else if(fm.order_addr2.value==""){
+		alert('주소를 입력해주세요');
+		fm.order_addr2.focus();
+		return;
+	}else if(fm.order_addr3.value==""){
+		fm.order_addr3.focus();
+		return;
+	}else if(fm.name1.value==""){
+		alert('이름을 입력해주세요');
+		fm.name1.focus();
+		return;
+	}else if(fm.email.value==""){
+		alert('이메일을 입력해주세요');
+		fm.email.focus();
+		return;
+	}else if(fm.phone.value==""){
+		alert('휴대폰 번호를 입력해주세요');
+		fm.phone.focus();
+		return;
+	}
 	
 	
 	
@@ -112,7 +148,7 @@ function check(){
 <%@ include file="../menu/include.jsp"%>
 
 
-
+<form action="<%=request.getContextPath()%>/order/update.do"	method="post" name="form1">
 
 <div class="commerce-cart-wrap1">
 	<div class="container">
@@ -136,22 +172,22 @@ function check(){
 			<hr>	
 				
 					<label style="width: 72px;height: 40px;">이름</label>
-					<input type="text" placeholder="이름을 입력해주세요" class="_1eWD8 _3SroY _27do8 commerce-cart__side-bar__order__btn" style="width: 270px;min-height:40px;background: rgb(255, 255, 255);color: black;font-size: 14px;font-weight: normal;border-color: rgb(219, 219, 219);">
+					<input type="text" name="name1" placeholder="이름을 입력해주세요" class="_1eWD8 _3SroY _27do8 commerce-cart__side-bar__order__btn" style="width: 270px;min-height:40px;background: rgb(255, 255, 255);color: black;font-size: 14px;font-weight: normal;border-color: rgb(219, 219, 219);">
 					<br>
 					
 					<label style="width: 72px;height: 40px;margin-top: 8px;">이메일</label>
-					<input type="email" placeholder="이메일을 입력해주세요" class="_1eWD8 _3SroY _27do8 commerce-cart__side-bar__order__btn" style="width: 270px;min-height:40px;background: rgb(255, 255, 255);color: black;font-size: 14px;font-weight: normal;border-color: rgb(219, 219, 219);margin-top: 8px;">	
+					<input type="email" name="email" placeholder="이메일을 입력해주세요" class="_1eWD8 _3SroY _27do8 commerce-cart__side-bar__order__btn" style="width: 270px;min-height:40px;background: rgb(255, 255, 255);color: black;font-size: 14px;font-weight: normal;border-color: rgb(219, 219, 219);margin-top: 8px;">	
 			
 			         <br>
 					<label style="width: 72px;height: 40px;margin-top: 8px;">휴대전화</label>
 					
 					
-					<input type="text" placeholder="휴대전화를 입력해주세요" class="_1eWD8 _3SroY _27do8 commerce-cart__side-bar__order__btn" style="width: 270px;min-height:40px;background: rgb(255, 255, 255);color: black;font-size: 14px;font-weight: normal;border-color: rgb(219, 219, 219);margin-top: 8px;">	
+					<input type="text" name="phone" placeholder="휴대전화를 입력해주세요" class="_1eWD8 _3SroY _27do8 commerce-cart__side-bar__order__btn" style="width: 270px;min-height:40px;background: rgb(255, 255, 255);color: black;font-size: 14px;font-weight: normal;border-color: rgb(219, 219, 219);margin-top: 8px;">	
 			
 			
 			
 			
-			<form action="<%=request.getContextPath()%>/order/update.do"	method="post" name="form1">
+			
 
  <input type="hidden" name="order_product" value="${map.product_name}">  
 <input type="hidden" name="order_sum" value="${map.total}">
@@ -166,7 +202,7 @@ function check(){
 			     <hr>	
 			 
 			    <label style="width: 72px;height: 40px;">배송지명</label>
-					<input type="text" placeholder="배송지를 입력해주세요" class="_1eWD8 _3SroY _27do8 commerce-cart__side-bar__order__btn" style="width: 270px;min-height:40px;background: rgb(255, 255, 255);color: black;font-size: 14px;font-weight: normal;border-color: rgb(219, 219, 219);">
+					<input type="text" name="va" placeholder="배송지를 입력해주세요" class="_1eWD8 _3SroY _27do8 commerce-cart__side-bar__order__btn" style="width: 270px;min-height:40px;background: rgb(255, 255, 255);color: black;font-size: 14px;font-weight: normal;border-color: rgb(219, 219, 219);">
 					<br>
 					
 					 <label style="width: 72px;height: 40px;">받는사람</label>

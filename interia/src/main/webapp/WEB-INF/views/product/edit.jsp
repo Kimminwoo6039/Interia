@@ -28,10 +28,6 @@ function check(){
 		alert("가격을 입력해주세요");
 		fm.product_price.focus();
 		return;
-	}else if(fm.product_brand.value==""){
-		alert("브랜드를 입력해주세요");
-		fm.product_brand.focus();
-		return;
 	}
 	
 	fm.action="<%=request.getContextPath()%>/product/update.do";
@@ -56,22 +52,22 @@ function delete1() {
 <body>
 <form name="form1" method="post">
 
-<div class="login-form" style="margin-top: 10px;">
+<div class="login-form" style="margin-top: 50px;width: 600px;">
      <h2 style="color: #35c5f0;text-align:center;">상품수정</h2>
 <input type="hidden" name="product_code" value="${list.product_code }">
 			<div class="form-group ">
 				<label>상품명</label> 
-				<input type="text" class="form-control"placeholder="아이디 " name="product_name" value="${list.product_name}">
+				<input type="text" class="form-control"placeholder="상품명 " name="product_name" value="${list.product_name}">
 			</div>
 
 			<div class="form-group log-status">
 				<label>상품수량</label> 
-				<input type="password" class="form-control"placeholder="비밀번호" name="product_amount" value="${list.product_amount }">
+				<input type="text" class="form-control"placeholder="상품수량" name="product_amount" value="${list.product_amount }">
 			</div>
 
 			<div class="form-group log-status">
 				<label>상품가격</label>
-				 <input type="text" class="form-control"placeholder="이름" name="product_price" value="${list.product_price}"> 
+				 <input type="text" class="form-control"placeholder="상품가격" name="product_price" value="${list.product_price}"> 
 			</div>
 			
 			<div class="form-group log-status">
@@ -88,6 +84,17 @@ function delete1() {
 						<option value="실내용품">실내용품</option>
 					</select>
 				</div>
+             
+             <div class="input-group mb-3" style="margin-top: 8px;">
+				  <label>선호도</label>
+					<select class="form-select bg-light form-control" name="product_best">
+						<option value="normal">일반 상품</option>
+						<option value="today">오늘의 상품</option>
+						<option value="best">베스트 상품</option>
+						
+					</select>
+				</div>
+             
              
              <div class="input-group mb-3" style="margin-top: 16px;">
             	<div class="form-group">

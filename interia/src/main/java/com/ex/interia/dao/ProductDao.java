@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.ex.interia.vo.Criteria;
 import com.ex.interia.vo.MemberVo;
+import com.ex.interia.vo.OrderVo;
 import com.ex.interia.vo.ProductVo;
 
 @Repository
@@ -61,6 +62,16 @@ public class ProductDao {
 
 	public ProductVo detail(int product_code) {
 		return sqlSession.selectOne(Mapper+".detail", product_code);
+	}
+
+
+	public List<ProductVo> list4() {
+		return sqlSession.selectList(Mapper+".list4");
+	}
+
+
+	public List<ProductVo> list16() {
+		return sqlSession.selectList(Mapper+".list16");
 	}
 	
 }

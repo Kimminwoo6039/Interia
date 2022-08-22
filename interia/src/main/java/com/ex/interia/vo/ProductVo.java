@@ -12,6 +12,20 @@ public class ProductVo {
 	private String product_brand;
 	private MultipartFile file1;
 	private String filename;
+	private String product_best;
+	
+	
+	
+	
+	
+	
+	
+	public String getProduct_best() {
+		return product_best;
+	}
+	public void setProduct_best(String product_best) {
+		this.product_best = product_best;
+	}
 	public int getProduct_code() {
 		return product_code;
 	}

@@ -9,6 +9,7 @@ import com.ex.interia.dao.MemberDao;
 import com.ex.interia.dao.ProductDao;
 import com.ex.interia.vo.Criteria;
 import com.ex.interia.vo.MemberVo;
+import com.ex.interia.vo.OrderVo;
 import com.ex.interia.vo.ProductVo;
 
 @Service
@@ -59,6 +60,17 @@ public class ProductService {
 
 	public ProductVo detail(int product_code) {
 		return productDao.detail(product_code);
+	}
+
+
+	//홈페이지 4개 뽑기 ㅎ
+	public List<ProductVo> list4() {
+		return productDao.list4();
+	}
+
+
+	public List<ProductVo> list16() {
+		return productDao.list16();
 	}
 	
 	
