@@ -5,7 +5,7 @@ public class OrderVo {
 	
 	
 	private int order_idx;
-	private int order_id;
+	private String order_id;
 	private String order_name;
 	private String order_phone;
 	private String order_product;
@@ -23,10 +23,10 @@ public class OrderVo {
 	public void setOrder_idx(int order_idx) {
 		this.order_idx = order_idx;
 	}
-	public int getOrder_id() {
+	public String getOrder_id() {
 		return order_id;
 	}
-	public void setOrder_id(int oder_id) {
+	public void setOrder_id(String oder_id) {
 		this.order_id = oder_id;
 	}
 	public String getOrder_name() {

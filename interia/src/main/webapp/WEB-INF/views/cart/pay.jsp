@@ -11,7 +11,7 @@
  int sum = (int) request.getAttribute("sum");
  String name = (String) request.getAttribute("name");
  
- System.out.println("sum= "+sum);
+
  
  %>
 
@@ -36,8 +36,8 @@
             pg : 'inicis',  // 카카오페이 형식으로 결제       
             pay_method : 'card', //카드 결제
             merchant_uid : 'merchant_' + new Date().getTime(), // 고유 결제아이디
-            amount : '1',
-            name :'테스트결제',
+            amount : '<%=sum%>',
+            name :'<%=name%>',
         
        
          /*    //m_redirect_url : 'http://www.naver.com' */
