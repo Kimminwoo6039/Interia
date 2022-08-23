@@ -85,6 +85,17 @@ public class MypageController {
 		return mav;
 	}
 	
-
+	 @RequestMapping("cancel.do")
+	 public ModelAndView cancel(@RequestParam("order_idx") String order_idx,
+			 HttpServletRequest request,HttpServletResponse response,
+			 ModelAndView mav
+			 ) throws Exception{
+		 
+		 orderService.cancel(order_idx);
+		 mav.setViewName("redirect:/mypage/main1.do?delivery_state=");
+		 mav.addObject("message", "cancle");
+		 return mav;
+		 
+	 }
 	
 }

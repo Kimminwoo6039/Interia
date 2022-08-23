@@ -60,9 +60,9 @@ function cancel_order(order_idx){
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav" style="margin-left: 200px;">
+      <ul class="navbar-nav" style="margin-left: 600px;">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<%=request.getContextPath()%>/" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color:#91d3ff;">주문배송내역조회</a>
+          <a class="nav-link active" aria-current="page" href="<%=request.getContextPath()%>/mypage/main1.do?delivery_state=" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color:#91d3ff;">주문배송내역조회</a>
         </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="<%=request.getContextPath()%>/product/list.do" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color: #2F3438; ">전체상품</a> 
@@ -150,11 +150,23 @@ function cancel_order(order_idx){
                <tr></tr>
       
                </tr>
-		
+               
+                 <c:choose>
+     <c:when test="${empty list}">            
+            <tr style="display: flex;justify-content: center;margin: auto;margin-left: 500px;">
+               <td colspan=2 class="fixed" style="justify-content: center;">
+                  <strong style="justify-content: center;font-size: 16px;">주문한 상품이 없습니다.</strong>
+               </td>
+             </tr>
+     </c:when>
+     <c:otherwise>
+	
 
 		<c:forEach var="item" items="${list}">
                 
-   
+
+            
+                
   
   <tr>
 
@@ -227,7 +239,8 @@ function cancel_order(order_idx){
                 
                 
                 </c:forEach>
-               
+               </c:otherwise>
+               </c:choose>
             
                </table>
 <footer style="margin-top: 500px;">
