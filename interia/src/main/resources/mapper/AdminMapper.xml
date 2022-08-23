@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "admin">
+
+
+<select id="insert" resultType="String">
+	  select membername from teamadmin where memberid=#{memberid} and memberpw = #{memberpw}
+	
+	</select>
+	
+	
+<select id="list" resultType="com.ex.interia.vo.OrderVo" parameterType="com.ex.interia.vo.DeliveryVo">
+	
+	
+	
+	select * from teamorder
+	
+	<if test="delivery_state !='' ">
+	where delivery_state=#{delivery_state} 
+	</if>
+    
+
+    
+	</select>	
+
+
+<select id="abc1" resultType="int">
+
+select count(*) from teamorder where DELIVERY_STATE='payment'
+
+</select>
+
+<select id="abc2" resultType="int">
+
+select count(*) from teamorder where DELIVERY_STATE='cancle'
+
+</select>
+
+<select id="abc3" resultType="int">
+
+select count(*) from teamorder where DELIVERY_STATE='prepared'
+
+</select>
+
+
+<select id="abc4" resultType="int">
+
+select count(*) from teamorder where DELIVERY_STATE='delivering' 
+
+</select>
+
+<select id="abc5" resultType="int">
+
+select count(*) from teamorder where DELIVERY_STATE='finished'
+
+</select>
+
+<select id="abc6" resultType="int">
+
+select count(*) from teamorder where delivery_state='sure' 
+
+</select>
+
+
+<update id="modify" parameterType="map">
+	
+    update teamorder set delivery_state=#{delivery_state} where order_idx=#{order_idx}
+	
+	
+	</update>
+</mapper>
+

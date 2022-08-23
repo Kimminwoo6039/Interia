@@ -25,21 +25,35 @@
 
 
 <script>
-function cancel_order(order_idx){
-	var answer = confirm("주문을 취소하시겠습니까?");
-	if(answer == true){
-		var formObj = document.createElement("form"); //폼 요소 생성
-		var i_order_id = document.createElement("input"); // input 생성
-		
-		i_order_id.name = "order_idx";
-		i_order_id.value = order_idx;
-		
-		formObj.appendChild(i_order_id);
-		document.body.appendChild(formObj);
-		formObj.method="post";
-		formObj.action="<%=request.getContextPath() %>/mypage/cancel.do";
-		formObj.submit();
-	}
+function modify_order_state(order_idx,select_id){
+	var delivery_state = document.getElementById(select_id);
+	var index = delivery_state.selectedIndex;
+	var value = delivery_state[index].value;
+	
+	
+	$.ajax({
+		type:"post",
+		async:false,
+		url:"<%=request.getContextPath() %>/admin/modify.do",
+		data:{
+			"order_idx" : order_idx,
+			delivery_state:value
+		},
+		success : function(data,textStatus){
+			if(data.trim()=='mod_success'){
+				alert("주문 정보를 수정했습니다.");
+				location.href="<%=request.getContextPath() %>/admin/main.do?delivery_state="
+			}else if(data.trim()=='failed'){
+				alert("다시 시도해 주세요");
+			}
+		},
+		error : function(data,textStatus){
+			alert("에러가 발생했습니다 ." +data)
+		},
+		complete : function(data,textStatus){
+			
+		}
+	});
 }
 </script>
 
@@ -62,7 +76,7 @@ function cancel_order(order_idx){
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav" style="margin-left: 600px;">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="<%=request.getContextPath()%>/mypage/main1.do?delivery_state=" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color:#91d3ff;">주문배송내역조회</a>
+          <a class="nav-link active" aria-current="page" href="<%=request.getContextPath()%>/admin/main.do?delivery_state=" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color:#91d3ff;">주문배송내역조회</a>
         </li>
    <%--        <li class="nav-item">
             <a class="nav-link" aria-current="page" href="<%=request.getContextPath()%>/product/list.do" style="font-family: 'Noto Sans KR', sans-serif;font-size: 18px;color: #2F3438; ">전체상품</a> 
@@ -100,149 +114,143 @@ function cancel_order(order_idx){
 
 	<div class="order-list__menu" style="width: 1200px; margin: auto;">
 	<a class="order-list__menu__list"
-			href="<%=request.getContextPath()%>/mypage/main1.do?delivery_state=cancle"><div
+			href="<%=request.getContextPath()%>/admin/main.do?delivery_state=cancle"><div
 				class="order-list__menu__list__wrap">
 				<div class="order-list__menu__list__title">결제취소</div>
 				<div class="order-list__menu__list__value">${count2}</div>
 			</div></a>
 		<a class="order-list__menu__list"
-			href="<%=request.getContextPath()%>/mypage/main1.do?delivery_state=payment"><div
+			href="<%=request.getContextPath()%>/admin/main.do?delivery_state=payment"><div
 				class="order-list__menu__list__wrap">
 				<div class="order-list__menu__list__title">결제완료</div>
 				<div class="order-list__menu__list__value">${count1}</div>
 			</div></a>
 			<a class="order-list__menu__list"
-			href="<%=request.getContextPath()%>/mypage/main1.do?delivery_state=prepared">
+			href="<%=request.getContextPath()%>/admin/main.do?delivery_state=prepared">
 			<div
 				class="order-list__menu__list__wrap">
 				<div class="order-list__menu__list__title">배송준비</div>
 				<div class="order-list__menu__list__value">${count3}</div>
 			</div></a><a class="order-list__menu__list"
-			href="<%=request.getContextPath()%>/mypage/main1.do?delivery_state=delivering"><div
+			href="<%=request.getContextPath()%>/admin/main.do?delivery_state=delivering"><div
 				class="order-list__menu__list__wrap">
 				<div
 					class="order-list__menu__list__title order-list__menu__list__title--focus">배송중</div>
 				<div class="order-list__menu__list__value">${count4}</div>
 			</div></a><a class="order-list__menu__list"
-			href="<%=request.getContextPath()%>/mypage/main1.do?delivery_state=finished"><div
+			href="<%=request.getContextPath()%>/admin/main.do?delivery_state=finished"><div
 				class="order-list__menu__list__wrap">
 				<div class="order-list__menu__list__title">배송완료</div>
 				<div class="order-list__menu__list__value">${count5}</div>
 			</div></a><a class="order-list__menu__list"
-			href="<%=request.getContextPath()%>/mypage/main1.do?delivery_state=sure"><div
+			href="<%=request.getContextPath()%>/admin/main.do?delivery_state=sure"><div
 				class="order-list__menu__list__wrap">
 				<div class="order-list__menu__list__title">구매확정</div>
 				<div class="order-list__menu__list__value">${count6}</div>
 			</div></a>
 	</div>
-
-	<table border="1px;" class="table" style="width: 1200px;margin: auto;">
-               <tr style="font-size: 21px;margin-bottom: 20px;text-align: center;background: #35c5f0;opacity: 0.8">
-   <td>주문번호</td>
-  <td>주문일자</td>
-  <td>주문상품</td>
-   <td>주문금액</td>
-   <td>주문상태</td>
-   <td>주문자</td>
-   <td>주문취소</td>
-               <Br>
-             
-               <tr></tr>
-      
-               </tr>
-               
-                 <c:choose>
-     <c:when test="${empty list}">            
-            <tr style="display: flex;justify-content: center;margin: auto;margin-left: 500px;">
-               <td colspan=2 class="fixed" style="justify-content: center;">
-                  <strong style="justify-content: center;font-size: 16px;">주문한 상품이 없습니다.</strong>
-               </td>
-             </tr>
-     </c:when>
-     <c:otherwise>
-	
-
-		<c:forEach var="item" items="${list}">
-                
-
-            
-                
-  
-  <tr>
-
-   <td style="font-size: 14px;margin-left: 20px;margin-top: 20px;text-align: center;">
-    ${item.order_idx}
-  </td>
-  
-  <td style="font-size: 14px;margin-left: 20px;text-align: center;"> 
-   ${item.date}
-  </td>
-  
-  <td style="font-size: 14px;margin-left: 20px;text-align: center;">
-  <strong>
- <A href="<%=request.getContextPath()%>/product/detail/${item.order_code}">${item.order_product}</A>
+    
+    
+     <table class="table" style="margin-top: 60px;width: 1200px;margin: auto;" border="1">
+  <tbody style="font-size: 15px;">
+<tr>
+<td>주문번호</td>
+<td>주문일자</td>
+<td>주문내역</td>
+<td>배송상태</td>
+<td>배송수정</td>
+</tr>
+<!-- 여기까지 -->
+<c:forEach var="item" items="${list}" varStatus="i">
+<c:choose>
+<c:when test="${item.delivery_state=='prepared'}">
+<tr bgcolor="lightgreen";>
+</c:when>
+<c:when test="${item.delivery_state=='finished'}">
+<tr bgcolor="lightgray";>
+</c:when>
+<c:otherwise>
+<tr bgcolor="orange">
+</c:otherwise>
+</c:choose>
+<td width="10%">
+<strong>${item.order_idx}</strong>
+</td>
+<td width="20%">
+<strong>${item.date}</strong>
+</td>
+<td width="40%">
+<strong>주문자 : ${item.order_name } </strong><br>
+<strong>주문자번호 : ${item.order_phone}</strong><br>
+<strong>수령자 : ${item.order_name} </strong><br>
+<strong>
+주문상품 :
+ <a href="<%=request.getContextPath()%>/shop/product/detail/${item.order_code}">${item.order_product}</a><br>
+ 
  </strong>
-  </td>
-  
-  <td style="font-size: 14px;margin-left: 20px;text-align: center;">
- <fmt:formatNumber value="${item.order_sum}" pattern="#,###" />&nbsp;원
-  </td>
-  
-  <td style="font-size: 14px;margin-left: 20px;text-align: center;">
-  <strong>
- <c:choose>
-  <c:when test="${item.delivery_state=='payment'}"> <!-- 조건문을 걸어줌 -->
-  결제완료
-  </c:when>
-  <c:when test="${item.delivery_state=='prepared'}"> <!-- 조건문을 걸어줌 -->
-  배송 준비중
-  </c:when>
-  <c:when test="${item.delivery_state=='delivering'}"> <!-- 조건문을 걸어줌 -->
-  배송중
-  </c:when>
-  <c:when test="${item.delivery_state=='finished'}"> <!-- 조건문을 걸어줌 -->
-  배송완료
-  </c:when>
-  <c:when test="${item.delivery_state=='cancle'}"> <!-- 조건문을 걸어줌 -->
-  주문 취소
-  </c:when>
-  <c:when test="${item.delivery_state=='sure'}"> <!-- 조건문을 걸어줌 -->
-  구매확정
-
-  </c:when>
- </c:choose>
- </strong>
-  </td>
-  
-  <td style="font-size: 14px;margin-left: 20px;text-align: center;" >
-  ${item.order_name}
-  </td>
-  
-  <td style="text-align: center;">
-  
-  <c:choose>
-  
-  <c:when test="${item.delivery_state=='payment'}">
-  <input type="button" onclick="cancel_order(${item.order_idx})" value="주문취소" >
-  </c:when>
-  <c:otherwise>
-    <input type="button" onclick="cacel_order('${item.order_idx}')" value="주문취소" disabled="disabled">
-  
-  </c:otherwise>
-  
-  </c:choose>
-  
-  
-  </td>
-  <c:set var="pre_order_id" value="${item.order_id}" />
-  </tr>
-                
-                
-                </c:forEach>
-               </c:otherwise>
-               </c:choose>
-            
-               </table>
+</td>
+<td width="20%">
+<select name="delivery_state${i.index}" id="delivery_state${i.index}"  class="form-select form-select-sm">
+<c:choose>
+<c:when test="${item.delivery_state=='payment'}">
+<option value="payment" selected>결제완료</option>
+<option value="prepared" >배송준비중</option>
+<option value="delivering">배송중</option>
+<option value="finished">배송완료</option>
+<option value="cancle">주문취소</option>
+<option value="sure">구매확정</option>
+</c:when>
+<c:when test="${item.delivery_state=='prepared' }">
+<option value="payment">결제완료</option>
+<option value="prepared" selected >배송준비중</option>
+<option value="delivering" >배송중</option>
+<option value="finished">배송완료</option>
+<option value="cancle">주문취소</option>
+<option value="sure">구매확정</option>
+</c:when>
+<c:when test="${item.delivery_state=='delivering' }">
+<option value="payment">결제완료</option>
+<option value="prepared" >배송준비중</option>
+<option value="delivering" selected>배송중</option>
+<option value="finished">배송완료</option>
+<option value="cancle">주문취소</option>
+<option value="sure">구매확정</option>
+</c:when>
+<c:when test="${item.delivery_state=='finished' }">
+<option value="payment">결제완료</option>
+<option value="prepared" >배송준비중</option>
+<option value="delivering">배송중</option>
+<option value="finished" selected>배송완료</option>
+<option value="cancle">주문취소</option>
+<option value="sure">구매확정</option>
+</c:when>
+<c:when test="${item.delivery_state=='cancle' }">
+<option value="payment">결제완료</option>
+<option value="prepared" >배송준비중</option>
+<option value="delivering">배송중</option>
+<option value="finished">배송완료</option>
+<option value="cancle"  selected>주문취소</option>
+<option value="sure">구매확정</option>
+</c:when>
+<c:when test="${item.delivery_state=='sure'}">
+<option value="payment">결제완료</option>
+<option value="prepared" >배송준비중</option>
+<option value="delivering">배송중</option>
+<option value="finished">배송완료</option>
+<option value="cancle">주문취소</option>
+<option value="sure"  selected>구매확정</option>
+</c:when>
+</c:choose>
+</select>
+</td>
+<td width="10%">
+<input type="button" value="배송수정" onclick="modify_order_state('${item.order_idx}','delivery_state${i.index}')"> 
+</td>
+ 
+<c:set value="${item.order_idx}" var="pre_order_idx"></c:set>
+</c:forEach>
+</tbody>
+</table>
 <footer style="margin-top: 500px;">
 <%@ include file="../menu/footer.jsp"%>
 </footer>
