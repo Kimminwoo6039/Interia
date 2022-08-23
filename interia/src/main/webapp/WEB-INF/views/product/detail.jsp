@@ -430,6 +430,6 @@ opacity: 0.7;
 <br>
 <hr width="1200px;" style="margin: auto;">
 
-
+<%@ include file="../menu/footer.jsp"%>
 </body>
 </html>

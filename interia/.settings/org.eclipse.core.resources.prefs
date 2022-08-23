@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/main/java/com/ex/interia/controller/MemberController.java=UTF-8
+encoding//src/main/java/com/ex/interia/controller/MypageController.java=UTF-8
 encoding//src/main/java/com/ex/interia/controller/OrderController.java=UTF-8
 encoding//src/main/java/com/ex/interia/controller/ProductController.java=UTF-8
 encoding//src/main/webapp/WEB-INF/views/menu/test.jsp=UTF-8

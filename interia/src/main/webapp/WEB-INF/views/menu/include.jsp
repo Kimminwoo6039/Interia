@@ -22,7 +22,7 @@
            </div>
            
            
-           <div class="col-md-6">
+           <div class="col-md-5">
            
    <div class="container">
 
@@ -46,7 +46,7 @@
         
            </div>
 
-					<div class="col-md-4">
+					<div class="col-md-5">
 						<div class="d-flex d-none d-md-flex flex-row align-items-center">
 						
 						
@@ -65,7 +65,7 @@
                                    <c:if test="${sessionScope.memberid != null}">
                                    
 							<div class="d-flex flex-column ms-1">                              
-								<strong style="font-size: 14px;color: #91d3ff"> ${sessionScope.name} 님 어서오세요 </strong>
+								<strong style="font-size: 14px;color: #91d3ff"> ${sessionScope.name}님 어서오세요 </strong>
 							</div>
 							<div class="d-flex flex-column ms-2">
 
@@ -73,14 +73,14 @@
 								
 								</div>
                                 	
-								
+								<a href="<%=request.getContextPath()%>/mypage/main1.do?delivery_state="  style="color: #666366;text-decoration: none;list-style: none;margin-left: 8px;"><span class="fw-bold">마이페이지</span></a>
 								
 							        </c:if>
 							<div class="d-flex flex-column ms-2">
 
 								<a href="#"  style="color: #666366;text-decoration: none;list-style: none;"><span class="fw-bold">고객센터</span></a>
 							</div>
-							<div class="d-flex flex-column ms-6" style="margin-left: 60px;">
+							<div class="d-flex flex-column ms-6" style="margin-left: 30px;">
 
 								<a href="#"> <i class="fa-solid fa-cart-shopping" style="font-size: 30px;color: black;"></i></a>
 							</div>

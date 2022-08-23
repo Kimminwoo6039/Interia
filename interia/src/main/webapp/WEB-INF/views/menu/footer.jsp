@@ -22,8 +22,7 @@
         width: 100%;
         height: 70px;
         background-color: #F7F9FA;
-        position: relative;
-        top: -15px;
+      
     }
     #companyinfo{
         width: 14%;
@@ -233,21 +232,20 @@
  <div id="container" style="align-items: center;">
         <div id="part1" style="margin-top: 120px;align-items: center;">
             <div class="container" style="margin-left: 300px;margin-top: 120px;">
-                <a id="sitelink" href="#" style="font-size: 12px;color: #2f3448;font-weight: 700;margin-top: 120px;">고객센터 ></a>
-                <p id="title" style="font-size: 24px;color: #2F3438;font-weight: 1000">1577-1577</p>
-                <p id="detail" style="color: #2F3438">09:00~18:00 (주말, 공휴일은 오늘의인테리어 배송 문의에 한해 전화 상담 가능)</p>
+                <span id="sitelink" href="#" style="font-size: 12px;color: #2f3448;font-weight: 700;margin-top: 120px;">고객센터 ></a>
+                <span id="title" style="font-size: 24px;color: #2F3438;font-weight: 1000">1577-1577</p>
+                <span id="detail" style="color: #2F3438">09:00~18:00 (주말, 공휴일은 오늘의인테리어 배송 문의에 한해 전화 상담 가능)</p>
                
-                <p style="font-size: 11px;font-weight: 400;color: #828C94">상호명 :(주)오늘의인테리어 :(고객문의) test@test (제휴문의) test@test 대표이사 :김마누 사업자등록번호 :000-00-00000 통신판매업신고번호 :2022-08-22</p>
-                <p style="font-size: 11px;font-weight: 400;color: #828C94">주소 :전주 덕진구 이젠, 27층우리은행 채무지급보증안내 :오늘의 엔티리어 고객님이 현금결제한 금액에 대해 우리은행과 채무지급보증 계약을 체결하여 안전거래를 보장하고 있습니다. 서비스가입사실확인</p>
-                <p style="font-size: 11px;font-weight: 400;color: #828C94">오늘의인테리어는 개별 판매자가 상품을 판매하는 오픈마켓이며 (주)버킷플레이스는 통신판매중개자로 거래 당사자가 아니므로, 판매자가 등록한 상품정보 및 거래 등에 대해 일체 책임을 지지 않습니다.</p>
-                <p style="font-size: 11px;font-weight: 400;color: #828C94">단 테스트는 판매자로 등록 판매한 상품의 경우는 판매자로서 책임을 부담합니다.</p>
-                <p style="font-size: 11px;font-weight: 400;color: #828C94">Copyright 2014. bucketplace, Co., Ltd. All rights reserved</p>
+                <span style="font-size: 11px;font-weight: 400;color: #828C94">상호명 :(주)오늘의인테리어 :(고객문의) test@test (제휴문의) test@test 대표이사 :김마누 사업자등록번호 :000-00-00000 통신판매업신고번호 :2022-08-22</p>
+                <span style="font-size: 11px;font-weight: 400;color: #828C94">주소 :전주 덕진구 이젠, 27층우리은행 채무지급보증안내 :오늘의 엔티리어 고객님이 현금결제한 금액에 대해 우리은행과 채무지급보증 계약을 체결하여 안전거래를 보장하고 있습니다. 서비스가입사실확인</p>
+                <span style="font-size: 11px;font-weight: 400;color: #828C94">오늘의인테리어는 개별 판매자가 상품을 판매하는 오픈마켓이며 (주)버킷플레이스는 통신판매중개자로 거래 당사자가 아니므로, 판매자가 등록한 상품정보 및 거래 등에 대해 일체 책임을 지지 않습니다.</p>
+                <span style="font-size: 11px;font-weight: 400;color: #828C94">단 테스트는 판매자로 등록 판매한 상품의 경우는 판매자로서 책임을 부담합니다.</p>
+                <span style="font-size: 11px;font-weight: 400;color: #828C94">Copyright 2014. bucketplace, Co., Ltd. All rights reserved</p>
             </div>
           
         </div>
         <div id="part2" >
-           <p style="font-size: 11px;font-weight: 400;color: #828C94;margin-left: 310px;margin-top: 10px;">ISMS 정보보호 관리체계 인증</p>
-               <p style="font-size: 11px;font-weight: 400;color: #828C94;margin-left: 310px;">2021. 09. 08 ~ 2024. 09. 07</p>
+         
         </div>
     </div>
 </div>

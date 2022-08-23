@@ -14,5 +14,62 @@ values(#{order_id},#{order_name},#{order_phone},#{order_product},#{order_sum},#{
 </insert>	
 	
 
+<select id="list" resultType="com.ex.interia.vo.OrderVo" parameterType="com.ex.interia.vo.DeliveryVo">
+
+select * from teamorder where
+<if test="delivery_state !='' "> <!-- 배송상태값이 있으면 실행 -->
+
+DELIVERY_STATE=#{delivery_state} and
+
+</if>
+
+order_id=#{order_id}
+
+</select>
+
+
+<select id="abc1" resultType="int">
+
+select count(*) from teamorder where DELIVERY_STATE='payment' and order_id=#{order_id}
+
+</select>
+
+<select id="abc2" resultType="int">
+
+select count(*) from teamorder where DELIVERY_STATE='cancle' and order_id=#{order_id}
+
+</select>
+
+<select id="abc3" resultType="int">
+
+select count(*) from teamorder where DELIVERY_STATE='prepared' and order_id=#{order_id}
+
+</select>
+
+
+<select id="abc4" resultType="int">
+
+select count(*) from teamorder where DELIVERY_STATE='delivering' and order_id=#{order_id}
+
+</select>
+
+<select id="abc5" resultType="int">
+
+select count(*) from teamorder where DELIVERY_STATE='finished' and order_id=#{order_id}
+
+</select>
+
+<select id="abc6" resultType="int">
+
+select count(*) from teamorder where delivery_state='sure' and order_id=#{order_id}
+
+</select>
+
+<update id="cancle">
+	
+	update teamorder set delivery_state = 'cancle' where order_idx = #{order_idx}
+	
+	</update>
+
 </mapper>
 

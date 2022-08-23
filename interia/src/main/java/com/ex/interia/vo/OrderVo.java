@@ -15,7 +15,14 @@ public class OrderVo {
 	private String order_addr3;
 	private int order_code;
 	private int order_cart;
-	private String DELIVERY_STATE;
+	private String delivery_state;
+
+	public String getDelivery_state() {
+		return delivery_state;
+	}
+	public void setDelivery_state(String delivery_state) {
+		this.delivery_state = delivery_state;
+	}
 	private String date;
 	public int getOrder_idx() {
 		return order_idx;
@@ -83,12 +90,7 @@ public class OrderVo {
 	public void setOrder_cart(int order_cart) {
 		this.order_cart = order_cart;
 	}
-	public String getDELIVERY_STATE() {
-		return DELIVERY_STATE;
-	}
-	public void setDELIVERY_STATE(String dELIVERY_STATE) {
-		DELIVERY_STATE = dELIVERY_STATE;
-	}
+	
 	public String getDate() {
 		return date;
 	}
